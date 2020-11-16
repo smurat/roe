@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:imagebutton/imagebutton.dart';
+
+class CustomMenuButton extends StatelessWidget {
+  const CustomMenuButton({
+    Key key,
+    @required this.onPressed,
+    @required this.buttonTitle,
+  }) : super(key: key);
+
+  final Function onPressed;
+  final String buttonTitle;
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    return Container(
+      child: ImageButton(
+        children: <Widget>[
+          Text(
+            buttonTitle,
+            style: TextStyle(color: Colors.white70, fontSize: 18),
+          )
+        ],
+        width: size.width * 0.70,
+        height: size.height * 0.20,
+        paddingTop: 0,
+        pressedImage: Image.asset(
+          "assets/buttonStock1.png",
+        ),
+        unpressedImage: Image.asset("assets/buttonStock2.png"),
+        onTap: onPressed,
+      ),
+    );
+  }
+}
