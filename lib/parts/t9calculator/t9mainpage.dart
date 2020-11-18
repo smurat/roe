@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 't9controller.dart';
 import 'widgets/ResearcherContainer.dart';
@@ -54,6 +55,9 @@ class T9CalculatorPage extends StatelessWidget {
                       increase: () {
                         _controller.arttir(0);
                       },
+                      decrease: () {
+                        _controller.azalt(0);
+                      },
                       researchID: 0,
                       controller: _controller,
                     ),
@@ -62,6 +66,9 @@ class T9CalculatorPage extends StatelessWidget {
                       controller: _controller,
                       increase: () {
                         _controller.arttir(1);
+                      },
+                      decrease: () {
+                        _controller.azalt(1);
                       },
                       researchID: 1,
                     ),
@@ -73,6 +80,9 @@ class T9CalculatorPage extends StatelessWidget {
                 controller: _controller,
                 increase: () {
                   _controller.arttir(2);
+                },
+                decrease: () {
+                  _controller.azalt(2);
                 },
                 researchID: 2,
               ),
@@ -86,6 +96,9 @@ class T9CalculatorPage extends StatelessWidget {
                       increase: () {
                         _controller.arttir(3);
                       },
+                      decrease: () {
+                        _controller.azalt(3);
+                      },
                       researchID: 3,
                       controller: _controller,
                     ),
@@ -93,6 +106,9 @@ class T9CalculatorPage extends StatelessWidget {
                       researchTitle: list[4],
                       increase: () {
                         _controller.arttir(4);
+                      },
+                      decrease: () {
+                        _controller.azalt(4);
                       },
                       researchID: 4,
                       controller: _controller,
@@ -105,11 +121,75 @@ class T9CalculatorPage extends StatelessWidget {
                 increase: () {
                   _controller.arttir(5);
                 },
+                decrease: () {
+                  _controller.azalt(5);
+                },
                 researchID: 5,
                 controller: _controller,
               ),
             ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: RaisedButton(
+                    color: Colors.blue,
+                    onPressed: () {
+                      _saveLevels();
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Icon(Icons.save_alt),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text('Save'),
+                        )
+                      ],
+                    )),
+              ),
+              RaisedButton(
+                  color: Colors.blue,
+                  onPressed: () {
+                    print(Get.find<T9Controlcu>().cavalryRecruimentLv);
+                    GetStorage box = GetStorage();
+                    print(box.read('t1a'));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Icon(Icons.settings_backup_restore),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Reset'),
+                      )
+                    ],
+                  )),
+            ],
+          ),
+          SizedBox(
+            height: 50,
           )
         ],
       );
+
+  _saveLevels() {
+    print('saved');
+    var controller = Get.find<T9Controlcu>();
+    GetStorage box = GetStorage();
+    box.write('t1a', controller.cavalryRecruimentLv);
+    box.write('t1b', controller.squirehoodLv);
+    box.write('t2', controller.warPathLv);
+    box.write('t3a', controller.plainSkirmishLv);
+    box.write('t3b', controller.ebonyBardingLv);
+    box.write('t4', controller.empireDefenderLv);
+  }
 }
