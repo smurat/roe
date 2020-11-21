@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 
 import 't9controller.dart';
 import 'widgets/ResearcherContainer.dart';
@@ -25,13 +26,83 @@ class T9CalculatorPage extends StatelessWidget {
             headerSliverBuilder: (context, innerBoxIsScrolled) {
               return <Widget>[
                 SliverAppBar(
+                  stretch: true,
                   expandedHeight: 200,
-                  floating: false,
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
-                    centerTitle: true,
+                    centerTitle: false,
+
+                    stretchModes: [
+                      StretchMode.zoomBackground,
+                      StretchMode.blurBackground,
+                      StretchMode.fadeTitle
+                    ],
                     title: Text('T9 Researchers'),
-                    background: Container(color: Colors.amber), //IMAGE gelecek
+                    background: Stack(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image:
+                                      AssetImage('assets/images/cavalry.jpg'))),
+                        ),
+                        Positioned(
+                          right: 0,
+                          child: Container(
+                            width: 100,
+                            height: 200,
+                            color: Colors.black87.withOpacity(0.4),
+                            child: Column(children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 20),
+                                child: Obx(() => CircularPercentIndicator(
+                                      animateFromLastPercent: true,
+                                      progressColor: Colors.blue.shade400,
+                                      backgroundColor: Colors.white,
+                                      radius: 70,
+                                      lineWidth: 4,
+                                      percent: _controller.percentage.value,
+                                      center: Text(
+                                        '${(_controller.percentage * 100).toStringAsFixed(0)} %', //TODO KALAN MEDAL %
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      animation: true,
+                                    )),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Center(
+                                child: Container(
+                                  height: 25,
+                                  color: Colors.black87.withOpacity(0.45),
+                                  width: 100,
+                                  child: Center(
+                                    child: Text(
+                                      'Left Cougrage',
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                height: 25,
+                                color: Colors.black87.withOpacity(0.45),
+                                width: 100,
+                                child: Center(
+                                  child: Obx(() => Text(
+                                        '${_controller.totalMedalLeftT9}', //TODO kalanMEDAL
+                                        style: TextStyle(color: Colors.white),
+                                      )),
+                                ),
+                              ),
+                            ]),
+                          ),
+                        ),
+                      ],
+                    ), //IMAGE gelecek
                   ),
                 )
               ];
@@ -51,6 +122,7 @@ class T9CalculatorPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ResearcherContainer(
+                      //Cavalry Recruitment
                       researchTitle: list[0],
                       increase: () {
                         _controller.arttir(0);
@@ -76,6 +148,7 @@ class T9CalculatorPage extends StatelessWidget {
                 ),
               ),
               ResearcherContainer(
+                //WARPATH
                 researchTitle: list[2],
                 controller: _controller,
                 increase: () {
@@ -138,6 +211,7 @@ class T9CalculatorPage extends StatelessWidget {
                     color: Colors.blue,
                     onPressed: () {
                       _saveLevels();
+                      Get.snackbar('Save', 'Save Complete ✔');
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -148,7 +222,7 @@ class T9CalculatorPage extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text('Save'),
+                          child: Text('Save'), //TODO T9 Save Butonu
                         )
                       ],
                     )),
@@ -156,9 +230,7 @@ class T9CalculatorPage extends StatelessWidget {
               RaisedButton(
                   color: Colors.blue,
                   onPressed: () {
-                    print(Get.find<T9Controlcu>().cavalryRecruimentLv);
-                    GetStorage box = GetStorage();
-                    print(box.read('t1a'));
+                    _resetLevels();
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -169,11 +241,18 @@ class T9CalculatorPage extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Text('Reset'),
+                        child: Text('Reset'), //TODO T9 Reset Butonu
                       )
                     ],
                   )),
             ],
+          ),
+          RaisedButton(
+            onPressed: () {
+              
+              print(_controller.totalMedalLeftT9);
+            }, //TODO T9 buton
+            child: Text('T9'),
           ),
           SizedBox(
             height: 50,
@@ -182,14 +261,51 @@ class T9CalculatorPage extends StatelessWidget {
       );
 
   _saveLevels() {
-    print('saved');
     var controller = Get.find<T9Controlcu>();
     GetStorage box = GetStorage();
-    box.write('t1a', controller.cavalryRecruimentLv);
-    box.write('t1b', controller.squirehoodLv);
-    box.write('t2', controller.warPathLv);
-    box.write('t3a', controller.plainSkirmishLv);
-    box.write('t3b', controller.ebonyBardingLv);
-    box.write('t4', controller.empireDefenderLv);
+    box.write('t1a', controller.cavalryRecruimentLv.value);
+    box.write('t1b', controller.squirehoodLv.value);
+    box.write('t2', controller.warPathLv.value);
+    box.write('t3a', controller.plainSkirmishLv.value);
+    box.write('t3b', controller.ebonyBardingLv.value);
+    box.write('t4', controller.empireDefenderLv.value);
+    box.write('t9', controller.totalMedalLeftT9.value);
+    box.write('total', controller.totalMedalLeft.value);    
+  }
+
+  _resetLevels() {
+    Get.defaultDialog(
+        title: 'Reset',
+        content: Text('Are you sure ?'),
+        actions: [
+          FlatButton(
+              onPressed: () {
+                Get.back();
+              },
+              child: Text('No')),
+          RaisedButton(
+            onPressed: () {
+              Get.back();
+              _controller.cavalryRecruimentLv.value = 0;
+              _controller.squirehoodLv.value = 0;
+              _controller.warPathLv.value = 0;
+              _controller.plainSkirmishLv.value = 0;
+              _controller.ebonyBardingLv.value = 0;
+              _controller.empireDefenderLv.value = 0;
+
+              _controller.medalCavalryRecruiment1.value = 8760;
+              _controller.medalSquirehood2.value = 8760;
+              _controller.medalWarPath3.value = 11670;
+              _controller.medalPlainSkirmish4.value = 46700;
+              _controller.medalEbonyBarding5.value = 46700;
+              _controller.medalEmpireDefender6.value = 17500;
+
+              _controller.totalMedalLeft.value = 140090;
+              _controller.totalMedalLeftT9.value = 131380;
+            },
+            child: Text('Yes'),
+          ),
+        ]);
   }
 }
+

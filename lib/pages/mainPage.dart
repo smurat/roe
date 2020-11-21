@@ -12,6 +12,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xFF222222),
+      
       child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
