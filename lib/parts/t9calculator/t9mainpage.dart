@@ -25,7 +25,7 @@ class T9CalculatorPage extends StatelessWidget {
         body: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) {
               return <Widget>[
-                SliverAppBar(
+                SliverAppBar(                  
                   stretch: true,
                   expandedHeight: 200,
                   pinned: true,
@@ -247,13 +247,6 @@ class T9CalculatorPage extends StatelessWidget {
                   )),
             ],
           ),
-          RaisedButton(
-            onPressed: () {
-              
-              print(_controller.totalMedalLeftT9);
-            }, //TODO T9 buton
-            child: Text('T9'),
-          ),
           SizedBox(
             height: 50,
           )
@@ -270,7 +263,7 @@ class T9CalculatorPage extends StatelessWidget {
     box.write('t3b', controller.ebonyBardingLv.value);
     box.write('t4', controller.empireDefenderLv.value);
     box.write('t9', controller.totalMedalLeftT9.value);
-    box.write('total', controller.totalMedalLeft.value);    
+    box.write('total', controller.totalMedalLeft.value);
   }
 
   _resetLevels() {
@@ -309,3 +302,20 @@ class T9CalculatorPage extends StatelessWidget {
   }
 }
 
+/**
+ * 
+ * CircularPercentIndicator(
+                      radius: 46,
+                      animateFromLastPercent: true,
+                      progressColor: Colors.blue.shade400,
+                      backgroundColor: Colors.white,
+                      lineWidth: 3,
+                      percent: _controller.percentage.value,
+                      center: Text(
+                        '${(_controller.percentage * 100).toStringAsFixed(0)} %', 
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      animation: true,
+                    ),
+ * 
+ */

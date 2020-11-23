@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:son_roe/parts/t9calculator/t9mainpage.dart';
 
-
 import 'package:son_roe/widgets/customMenuButton.dart';
 
 class MainPage extends StatelessWidget {
@@ -12,7 +11,6 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xFF222222),
-      
       child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
@@ -26,11 +24,9 @@ class MainPage extends StatelessWidget {
                       Get.to(T9CalculatorPage());
                     },
                     buttonTitle: 'T9 Calculator'),
-                CustomMenuButton(
-                    onPressed: () {
-                      Get.to(T9CalculatorPage());
-                    },
-                    buttonTitle: 'null-1'),
+                CustomMenuButton(onPressed: (){                 
+                    
+                }, buttonTitle: '1'),
                 CustomMenuButton(onPressed: () {}, buttonTitle: 'null-1'),
                 CustomMenuButton(onPressed: () {}, buttonTitle: 'null-1'),
               ],
@@ -38,4 +34,6 @@ class MainPage extends StatelessWidget {
           )),
     );
   }
+
+
 }
