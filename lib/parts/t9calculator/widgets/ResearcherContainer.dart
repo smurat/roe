@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:son_roe/parts/t9calculator/controller/t9controllercav.dart';
 
 import '../t9controller.dart';
 
@@ -15,7 +16,7 @@ class ResearcherContainer extends StatelessWidget {
   final String researchTitle;
   final Function increase;
   final Function decrease;
-  final T9Controlcu controller;
+  final T9CavalryController controller;
   final int researchID;
 
   @override

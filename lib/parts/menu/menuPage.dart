@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:son_roe/parts/t9calculator/t9mainpage.dart';
+import 'package:son_roe/parts/t9calculator/t9menupage.dart';
 
-import 'package:son_roe/widgets/customMenuButton.dart';
+import 'widgets/customMenuButton.dart';
 
-class MainPage extends StatelessWidget {
-  MainPage({Key key}) : super(key: key);
+class MenuPage extends StatelessWidget {
+  MenuPage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +21,14 @@ class MainPage extends StatelessWidget {
               children: [
                 CustomMenuButton(
                     onPressed: () {
-                      Get.to(T9CalculatorPage());
+                      Get.to(T9ManuPage());
                     },
                     buttonTitle: 'T9 Calculator'),
-                CustomMenuButton(onPressed: (){                 
-                    
-                }, buttonTitle: '1'),
+                CustomMenuButton(
+                    onPressed: () {
+                     
+                    },
+                    buttonTitle: '1'),
                 CustomMenuButton(onPressed: () {}, buttonTitle: 'null-1'),
                 CustomMenuButton(onPressed: () {}, buttonTitle: 'null-1'),
               ],
@@ -34,6 +36,4 @@ class MainPage extends StatelessWidget {
           )),
     );
   }
-
-
 }

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:son_roe/parts/t9calculator/widgets/ResearcherContainer.dart';
 
-import 'controller/t9controllercav.dart';
-import 't9controller.dart';
-import 'widgets/ResearcherContainer.dart';
+import '../controller/t9controllercav.dart';
 
-class T9MainPage extends StatelessWidget {
+
+class T9CavalryMainPage extends StatelessWidget {
   final _cav = [
     'Cavalry Recruitment',
     'Squirehood',
@@ -257,7 +257,7 @@ class T9MainPage extends StatelessWidget {
       );
 
   _saveLevels() {
-    var controller = Get.find<T9Controlcu>();
+    var controller = Get.find<T9CavalryController>();
     GetStorage box = GetStorage();
     box.write('t1a', controller.cavalryRecruimentLv.value);
     box.write('t1b', controller.squirehoodLv.value);

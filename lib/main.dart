@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:son_roe/TEST/test.dart';
 
-import 'pages/mainPage.dart';
+import 'parts/menu/menuPage.dart';
 import 'parts/t9calculator/t9controller.dart';
 
 void main() async {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: TestDosyasi(),
-      home: MainPage(),
+      home: MenuPage(),
     );
   }
 
@@ -52,23 +52,11 @@ class MyApp extends StatelessWidget {
         : box.read('t4');
 
     if (box.read('t9') != null) {
-      int i = box.read('t9');
-
       controller.totalMedalLeftT9.value = box.read('t9');
     }
     if (box.read('total') != null) {
       controller.totalMedalLeft.value = box.read('total');
     }
-    // print('OKUNAN-------------------------------------------------');
-    /*  print(box.read('t1a'));
-    print(box.read('t1b'));
-    print(box.read('t2'));
-    print(box.read('t3a'));
-    print(box.read('t3b')); 
-    print(box.read('t4'));
-    print(box.read('t9')); 
-    print(box.read('total'));*/
-
     controller.yuzdeHesapla();
   }
 }
