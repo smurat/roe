@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:son_roe/parts/t9calculator/t9mainpage.dart';
+
+
+import 'pages/t9cavmainpage.dart';
 
 class T9ManuPage extends StatelessWidget {
   @override
@@ -35,7 +37,7 @@ class T9ManuPage extends StatelessWidget {
                       title: 'FOOTMAN',
                     ),
                     onTap: () {
-                      Get.to(T9MainPage());
+                      Get.to(T9CavalryMainPage());
                     },
                   ),
                   T9MenuPageItemWidget(

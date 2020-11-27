@@ -1,4 +1,27 @@
 import 'package:flutter/material.dart';
+
+class TestDosyasi extends StatefulWidget {
+  @override
+  _TestDosyasiState createState() => _TestDosyasiState();
+}
+
+class _TestDosyasiState extends State<TestDosyasi> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {},
+        ),
+        appBar: AppBar(
+          title: Text('TEST'),
+        ),
+        body: Container());
+  }
+}
+
+///TEST 1----------------------------------------------------------------------------------
+/*import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:time_machine/time_machine.dart';
 
@@ -59,3 +82,4 @@ class _TestDosyasiState extends State<TestDosyasi> {
     }
   }
 }
+*/

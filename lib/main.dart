@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:son_roe/TEST/test.dart';
+import 'package:son_roe/parts/T8/Pages/T9MenuPage.dart';
+import 'package:son_roe/parts/t9calculator/controller/t9controllercav.dart';
 
 import 'parts/menu/menuPage.dart';
-import 'parts/t9calculator/t9controller.dart';
+
 
 void main() async {
   await GetStorage.init();
-  Get.put(T9Controlcu()); 
+  Get.put(T9CavalryController()); 
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-      initValues();
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -24,15 +25,20 @@ class MyApp extends StatelessWidget {
       ),
       // home: TestDosyasi(),
       home: MenuPage(),
+    // home: TESTT9MenuPage(),
     );
   }
 
-  initValues() {
+ 
+}
+/**
+ * 
+ *  initValues() {
     //program ilk çalıştırıldığında storage dan veri çekip gösterilecek yerlere atanır.Boş ise
     // default ayarlanmış olan 0 değeri atanır.
 
     GetStorage box = GetStorage();
-    var controller = Get.find<T9Controlcu>();
+    var controller = Get.find<T9CavalryController>();
     controller.cavalryRecruimentLv.value = box.read('t1a') == null
         ? controller.cavalryRecruimentLv.value
         : box.read('t1a');
@@ -59,4 +65,4 @@ class MyApp extends StatelessWidget {
     }
     controller.yuzdeHesapla();
   }
-}
+ */

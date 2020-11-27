@@ -1,12 +1,14 @@
 import 'package:get/get.dart';
 
 class T9CavalryController extends GetxController {
+  
   var cavalryRecruimentLv = 0.obs;
   var squirehoodLv = 0.obs;
   var warPathLv = 0.obs;
   var plainSkirmishLv = 0.obs;
   var ebonyBardingLv = 0.obs;
   var empireDefenderLv = 0.obs;
+  List<int> cavlevels = [0, 0, 0, 0, 0, 0].obs;
 
   var medalCavalryRecruiment1 = 8760.obs;
   var medalSquirehood2 = 8760.obs;
@@ -60,20 +62,20 @@ class T9CavalryController extends GetxController {
       case 1:
         if (squirehoodLv.value < 15) {
           squirehoodLv.value++;
-          totalMedalLeft -= cavalryRecruitmentsFARK[squirehoodLv.value-1];
+          totalMedalLeft -= cavalryRecruitmentsFARK[squirehoodLv.value - 1];
 
           if (squirehoodLv.value != 15) {
-            totalMedalLeftT9 -= cavalryRecruitmentsFARK[squirehoodLv.value-1];
+            totalMedalLeftT9 -= cavalryRecruitmentsFARK[squirehoodLv.value - 1];
           }
         }
         break;
       case 2:
         if (warPathLv.value < 10) {
           warPathLv.value++;
-          totalMedalLeft -= warPathFARK[warPathLv.value-1];
+          totalMedalLeft -= warPathFARK[warPathLv.value - 1];
 
           if (warPathLv.value != 10) {
-            totalMedalLeftT9 -= warPathFARK[warPathLv.value-1];
+            totalMedalLeftT9 -= warPathFARK[warPathLv.value - 1];
           }
         }
         break;
@@ -81,22 +83,22 @@ class T9CavalryController extends GetxController {
         if (plainSkirmishLv.value < 20) {
           plainSkirmishLv.value++;
 
-          totalMedalLeft -= plainSkirmishFARK[plainSkirmishLv.value-1];
-          totalMedalLeftT9 -= plainSkirmishFARK[plainSkirmishLv.value-1];
+          totalMedalLeft -= plainSkirmishFARK[plainSkirmishLv.value - 1];
+          totalMedalLeftT9 -= plainSkirmishFARK[plainSkirmishLv.value - 1];
         }
         break;
       case 4:
         if (ebonyBardingLv.value < 20) {
           ebonyBardingLv.value++;
-          totalMedalLeft -= plainSkirmishFARK[ebonyBardingLv.value-1];
-          totalMedalLeftT9 -= plainSkirmishFARK[ebonyBardingLv.value-1];
+          totalMedalLeft -= plainSkirmishFARK[ebonyBardingLv.value - 1];
+          totalMedalLeftT9 -= plainSkirmishFARK[ebonyBardingLv.value - 1];
         }
         break;
       case 5:
         if (empireDefenderLv.value < 1) {
           empireDefenderLv.value++;
-          totalMedalLeft -= empireDefenderFARK[empireDefenderLv.value-1];
-          totalMedalLeftT9 -= empireDefenderFARK[empireDefenderLv.value-1];
+          totalMedalLeft -= empireDefenderFARK[empireDefenderLv.value - 1];
+          totalMedalLeftT9 -= empireDefenderFARK[empireDefenderLv.value - 1];
         }
         break;
       default:
@@ -129,7 +131,7 @@ class T9CavalryController extends GetxController {
         break;
       case 2:
         if (warPathLv.value > 0) {
-          warPathLv.value--;          
+          warPathLv.value--;
           totalMedalLeft += warPathFARK[warPathLv.value];
 
           if (warPathLv.value != 9) {
@@ -258,7 +260,7 @@ class T9CavalryController extends GetxController {
     9140,
     0
   ];
-  List<int> empireDefenderList = [17500,0];
+  List<int> empireDefenderList = [17500, 0];
 
   List<int> cavalryRecruitmentsFARK = [
     180,
@@ -300,5 +302,5 @@ class T9CavalryController extends GetxController {
     7030,
     9140,
   ];
-  List<int> empireDefenderFARK = [17500,0];
+  List<int> empireDefenderFARK = [17500, 0];
 }
