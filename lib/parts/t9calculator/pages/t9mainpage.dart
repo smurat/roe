@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+
 import 'package:son_roe/parts/t9calculator/widgets/ResearcherContainer.dart';
 
-import '../controller/t9controllercav.dart';
-
-
-class T9CavalryMainPage extends StatelessWidget {
+class T9MainPage extends StatelessWidget {
+  T9MainPage({Key key, @required this.controller, @required this.type,@required this.mainImage})
+      : super(key: key);
   final _cav = [
     'Cavalry Recruitment',
     'Squirehood',
@@ -16,19 +16,21 @@ class T9CavalryMainPage extends StatelessWidget {
     'Ebony Barding',
     'Empire Defender'
   ];
-
-  final T9CavalryController _controller = Get.put(T9CavalryController());
+  final controller;
+  final type;
+  final mainImage;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {           
     return SafeArea(
       child: Scaffold(
         body: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) {
+               var imageHeight = MediaQuery.of(context).size.height*0.256;
               return <Widget>[
                 SliverAppBar(
                   stretch: true,
-                  expandedHeight: 200,
+                  expandedHeight: imageHeight,
                   pinned: true,
                   flexibleSpace: FlexibleSpaceBar(
                     centerTitle: false,
@@ -38,7 +40,7 @@ class T9CavalryMainPage extends StatelessWidget {
                       StretchMode.blurBackground,
                       StretchMode.fadeTitle
                     ],
-                    title: Text('T9 Researchers'),
+                    title: Text(type),
                     background: Stack(
                       children: [
                         Container(
@@ -46,7 +48,7 @@ class T9CavalryMainPage extends StatelessWidget {
                               image: DecorationImage(
                                   fit: BoxFit.fill,
                                   image:
-                                      AssetImage('assets/images/cavalry.jpg'))),
+                                      AssetImage(mainImage))),
                         ),
                         Positioned(
                           right: 0,
@@ -63,9 +65,10 @@ class T9CavalryMainPage extends StatelessWidget {
                                       backgroundColor: Colors.white,
                                       radius: 70,
                                       lineWidth: 4,
-                                      percent: _controller.percentage.value,
+                                      percent:
+                                          controller.model.value.percentage,
                                       center: Text(
-                                        '${(_controller.percentage * 100).toStringAsFixed(0)} %', //TODO KALAN MEDAL %
+                                        '${(controller.model.value.percentage * 100).toStringAsFixed(0)} %', //TODO KALAN MEDAL %
                                         style: TextStyle(color: Colors.white),
                                       ),
                                       animation: true,
@@ -94,7 +97,7 @@ class T9CavalryMainPage extends StatelessWidget {
                                 width: 100,
                                 child: Center(
                                   child: Obx(() => Text(
-                                        '${_controller.totalMedalLeftT9}', //TODO kalanMEDAL
+                                        '${controller.model.value.t9Left}', //TODO kalanMEDAL
                                         style: TextStyle(color: Colors.white),
                                       )),
                                 ),
@@ -111,6 +114,7 @@ class T9CavalryMainPage extends StatelessWidget {
             body: t9Body(_cav)),
       ),
     );
+    
   }
 
   ListView t9Body(List list) => ListView(
@@ -122,26 +126,27 @@ class T9CavalryMainPage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+//TODO ARTTIRMA BUTONO
                     ResearcherContainer(
                       //Cavalry Recruitment
                       researchTitle: list[0],
                       increase: () {
-                        _controller.arttir(0);
+                        controller.arttir(0);
                       },
                       decrease: () {
-                        _controller.azalt(0);
+                        controller.azalt(0);
                       },
                       researchID: 0,
-                      controller: _controller,
+                      controller: controller,
                     ),
                     ResearcherContainer(
                       researchTitle: list[1],
-                      controller: _controller,
+                      controller: controller,
                       increase: () {
-                        _controller.arttir(1);
+                        controller.arttir(1);
                       },
                       decrease: () {
-                        _controller.azalt(1);
+                        controller.azalt(1);
                       },
                       researchID: 1,
                     ),
@@ -151,12 +156,12 @@ class T9CavalryMainPage extends StatelessWidget {
               ResearcherContainer(
                 //WARPATH
                 researchTitle: list[2],
-                controller: _controller,
+                controller: controller,
                 increase: () {
-                  _controller.arttir(2);
+                  controller.arttir(2);
                 },
                 decrease: () {
-                  _controller.azalt(2);
+                  controller.azalt(2);
                 },
                 researchID: 2,
               ),
@@ -168,24 +173,24 @@ class T9CavalryMainPage extends StatelessWidget {
                     ResearcherContainer(
                       researchTitle: list[3],
                       increase: () {
-                        _controller.arttir(3);
+                        controller.arttir(3);
                       },
                       decrease: () {
-                        _controller.azalt(3);
+                        controller.azalt(3);
                       },
                       researchID: 3,
-                      controller: _controller,
+                      controller: controller,
                     ),
                     ResearcherContainer(
                       researchTitle: list[4],
                       increase: () {
-                        _controller.arttir(4);
+                        controller.arttir(4);
                       },
                       decrease: () {
-                        _controller.azalt(4);
+                        controller.azalt(4);
                       },
                       researchID: 4,
-                      controller: _controller,
+                      controller: controller,
                     ),
                   ],
                 ),
@@ -193,13 +198,13 @@ class T9CavalryMainPage extends StatelessWidget {
               ResearcherContainer(
                 researchTitle: list[5],
                 increase: () {
-                  _controller.arttir(5);
+                  controller.arttir(5);
                 },
                 decrease: () {
-                  _controller.azalt(5);
+                  controller.azalt(5);
                 },
                 researchID: 5,
-                controller: _controller,
+                controller: controller,
               ),
             ],
           ),
@@ -257,16 +262,35 @@ class T9CavalryMainPage extends StatelessWidget {
       );
 
   _saveLevels() {
-    var controller = Get.find<T9CavalryController>();
-    GetStorage box = GetStorage();
-    box.write('t1a', controller.cavalryRecruimentLv.value);
-    box.write('t1b', controller.squirehoodLv.value);
-    box.write('t2', controller.warPathLv.value);
-    box.write('t3a', controller.plainSkirmishLv.value);
-    box.write('t3b', controller.ebonyBardingLv.value);
-    box.write('t4', controller.empireDefenderLv.value);
-    box.write('t9', controller.totalMedalLeftT9.value);
-    box.write('total', controller.totalMedalLeft.value);
+    GetStorage box = GetStorage();   
+
+    switch (controller.model.value.type) {
+      case 'Footman':
+        print('Footman');
+         box.write('Footman', _writeValueToLocal());
+        break;
+      case 'Archer':
+        print(_writeValueToLocal());
+          box.write('Archer', _writeValueToLocal());
+        break;
+      case 'Cavalry':
+        print(_writeValueToLocal());
+          box.write('Cavalry', _writeValueToLocal());
+
+        break;
+      default:
+    }
+
+  }
+
+  List<dynamic> _writeValueToLocal() {
+    return [
+      controller.model.value.levels,
+      controller.model.value.medals,
+      controller.model.value.t9Left,
+      controller.model.value.totalLeft,
+      controller.model.value.percentage
+    ];
   }
 
   _resetLevels() {
@@ -281,24 +305,19 @@ class T9CavalryMainPage extends StatelessWidget {
               child: Text('No')),
           RaisedButton(
             onPressed: () {
+              switch (controller.model.value.type) {
+                case 'Archer':
+                  controller.reset();
+                  break;
+                case 'Footman':
+                  controller.reset();
+                  break;
+                case 'Cavalry':
+                  controller.reset();
+                  break;
+                default:
+              }
               Get.back();
-              _controller.cavalryRecruimentLv.value = 0;
-              _controller.squirehoodLv.value = 0;
-              _controller.warPathLv.value = 0;
-              _controller.plainSkirmishLv.value = 0;
-              _controller.ebonyBardingLv.value = 0;
-              _controller.empireDefenderLv.value = 0;
-
-              _controller.medalCavalryRecruiment1.value = 8760;
-              _controller.medalSquirehood2.value = 8760;
-              _controller.medalWarPath3.value = 11670;
-              _controller.medalPlainSkirmish4.value = 46700;
-              _controller.medalEbonyBarding5.value = 46700;
-              _controller.medalEmpireDefender6.value = 17500;
-
-              _controller.totalMedalLeft.value = 140090;
-              _controller.totalMedalLeftT9.value = 131380;
-              _controller.percentage.value = 0;
             },
             child: Text('Yes'),
           ),

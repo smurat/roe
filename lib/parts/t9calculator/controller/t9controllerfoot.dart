@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
 import 'package:son_roe/parts/t9calculator/pages/t9model.dart';
 
-class T9ControllerCavalry extends GetxController {
+class T9ControllerFootman extends GetxController {
   final model = T9Model(
-          type: 'Cavalry',
+          type: 'Footman',
           levels: [0, 0, 0, 0, 0, 0],
           medals: [8760, 8760, 11670, 46700, 46700, 17500],
           t9Left: 131380,
@@ -15,7 +15,7 @@ class T9ControllerCavalry extends GetxController {
     model.update((val) {
       levelArttir(index, val);
       medalcalculate(index, val);
-      yuzdeHesapla(index);
+       yuzdeHesapla(index);
     });
   }
 
@@ -26,7 +26,6 @@ class T9ControllerCavalry extends GetxController {
       yuzdeHesapla(index);
     });
   }
-
   reset() {
     model.update((val) {
       val.levels = [0, 0, 0, 0, 0, 0];
@@ -113,7 +112,8 @@ class T9ControllerCavalry extends GetxController {
     switch (index) {
       case 0:
         if (val.levels[index] > 0) {
-          val.levels[index]--;          
+          val.levels[index]--;
+          print(val.levels[index]);
           val.totalLeft += cavalryRecruitmentsFARK[val.levels[index]];
 
           if (val.levels[index] != 14) {

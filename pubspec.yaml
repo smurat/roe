@@ -57,9 +57,12 @@ flutter:
   assets:
      - assets/
      - assets/images/cavalry.jpg
+     - assets/images/footman.jpg
+     - assets/images/archer.jpg
      - assets/images/dragon.jpg
      - assets/images/f1.png
      - assets/images/a1.png
+     - assets/images/a11.png
      - assets/images/c1.png
      - packages/time_machine/data/cultures/cultures.bin
      - packages/time_machine/data/tzdb/tzdb.bin

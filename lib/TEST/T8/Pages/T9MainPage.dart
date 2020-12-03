@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:son_roe/parts/T8/Controller/T9Controller.dart';
+import 'package:son_roe/TEST/T8/Controller/T9Controller.dart';
+
 
 class TESTT9MainPage extends StatelessWidget {
   TestT9Controller controller = Get.put(TestT9Controller());

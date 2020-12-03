@@ -28,9 +28,9 @@ class MenuPage extends StatelessWidget {
                     onPressed: () {
                      
                     },
-                    buttonTitle: '1'),
-                CustomMenuButton(onPressed: () {}, buttonTitle: 'null-1'),
-                CustomMenuButton(onPressed: () {}, buttonTitle: 'null-1'),
+                    buttonTitle: 'Coming soon'),
+                CustomMenuButton(onPressed: () {}, buttonTitle: 'Coming soon'),
+                CustomMenuButton(onPressed: () {}, buttonTitle: 'Coming soon'),
               ],
             ),
           )),

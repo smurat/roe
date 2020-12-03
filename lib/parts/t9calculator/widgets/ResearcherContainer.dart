@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:son_roe/parts/t9calculator/controller/t9controllercav.dart';
 
-
-
 class ResearcherContainer extends StatelessWidget {
   const ResearcherContainer({
     Key key,
@@ -16,12 +14,11 @@ class ResearcherContainer extends StatelessWidget {
   final String researchTitle;
   final Function increase;
   final Function decrease;
-  final T9CavalryController controller;
+  final controller;
   final int researchID;
 
   @override
   Widget build(BuildContext context) {
- 
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
@@ -43,7 +40,7 @@ class ResearcherContainer extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
                       child: Obx(() => Text(
-                            showLevels(researchID),
+                            '${controller.model.value.levels[researchID]}',
                             style: TextStyle(fontSize: 30),
                           )),
                     ),
@@ -51,7 +48,7 @@ class ResearcherContainer extends StatelessWidget {
                     Text('$researchTitle', style: TextStyle(fontSize: 12)),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8.0),
-                      child: Obx(() => Text('${showMedals(researchID)}')),
+                      child: Obx(() => Text('${controller.model.value.medals[researchID]}')),
                     )
                   ],
                 ),
@@ -85,54 +82,4 @@ class ResearcherContainer extends StatelessWidget {
     );
   }
 
-   
-  String showLevels(int idForVariable) {
-    switch (idForVariable) {
-      case 0:
-        return controller.cavalryRecruimentLv.value.toString();
-        break;
-      case 1:
-        return controller.squirehoodLv.value.toString();
-        break;
-      case 2:
-        return controller.warPathLv.value.toString();
-        break;
-      case 3:
-        return controller.plainSkirmishLv.value.toString();
-        break;
-      case 4:
-        return controller.ebonyBardingLv.value.toString();
-        break;
-      case 5:
-        return controller.empireDefenderLv.value.toString();
-        break;
-      default:
-        return 0.toString();
-    }
-  }
-
-  int showMedals(int idForVariable) {
-    switch (idForVariable) {
-      case 0:
-        return controller.medalCavalryRecruiment1.value;
-        break;
-      case 1:
-        return controller.medalSquirehood2.value;
-        break;
-      case 2:
-        return controller.medalWarPath3.value;
-        break;
-      case 3:
-        return controller.medalPlainSkirmish4.value;
-        break;
-      case 4:
-        return controller.medalEbonyBarding5.value;
-        break;
-      case 5:
-        return controller.medalEmpireDefender6.value;
-        break;
-      default:
-        return 0;
-    }
-  }
 }

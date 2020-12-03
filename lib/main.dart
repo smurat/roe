@@ -2,16 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:son_roe/TEST/test.dart';
-import 'package:son_roe/parts/T8/Pages/T9MenuPage.dart';
+import 'package:son_roe/parts/t9calculator/controller/t9controllerarch.dart';
+
 import 'package:son_roe/parts/t9calculator/controller/t9controllercav.dart';
+import 'package:son_roe/parts/t9calculator/controller/t9controllerfoot.dart';
 
 import 'parts/menu/menuPage.dart';
 
-
 void main() async {
   await GetStorage.init();
-  Get.put(T9CavalryController()); 
+  initController();
   runApp(MyApp());
+}
+
+void initController() {
+  Get.put(T9ControllerCavalry());
+  Get.put(T9ControllerArcher());
+  Get.put(T9ControllerFootman());
+  initValues();
 }
 
 class MyApp extends StatelessWidget {
@@ -25,44 +33,28 @@ class MyApp extends StatelessWidget {
       ),
       // home: TestDosyasi(),
       home: MenuPage(),
-    // home: TESTT9MenuPage(),
+      // home: TESTT9MenuPage(),
     );
   }
-
- 
 }
-/**
- * 
- *  initValues() {
-    //program ilk çalıştırıldığında storage dan veri çekip gösterilecek yerlere atanır.Boş ise
-    // default ayarlanmış olan 0 değeri atanır.
 
-    GetStorage box = GetStorage();
-    var controller = Get.find<T9CavalryController>();
-    controller.cavalryRecruimentLv.value = box.read('t1a') == null
-        ? controller.cavalryRecruimentLv.value
-        : box.read('t1a');
-    controller.squirehoodLv.value = box.read('t1b') == null
-        ? controller.squirehoodLv.value
-        : box.read('t1b');
-    controller.warPathLv.value =
-        box.read('t2') == null ? controller.warPathLv.value : box.read('t2');
-    controller.plainSkirmishLv.value = box.read('t3a') == null
-        ? controller.plainSkirmishLv.value
-        : box.read('t3a');
-    controller.ebonyBardingLv.value = box.read('t3b') == null
-        ? controller.ebonyBardingLv.value
-        : box.read('t3b');
-    controller.empireDefenderLv.value = box.read('t4') == null
-        ? controller.empireDefenderLv.value
-        : box.read('t4');
+initValues() {
+  GetStorage box = GetStorage();
 
-    if (box.read('t9') != null) {
-      controller.totalMedalLeftT9.value = box.read('t9');
-    }
-    if (box.read('total') != null) {
-      controller.totalMedalLeft.value = box.read('total');
-    }
-    controller.yuzdeHesapla();
+  if (box.read('Cavalry') != null) {
+    Get.find<T9ControllerCavalry>().model.value.percentage =
+        box.read('Cavalry')[4];
+    Get.find<T9ControllerCavalry>().model.value.t9Left = box.read('Cavalry')[2];
   }
- */
+  if (box.read('Archer') != null) {
+    Get.find<T9ControllerArcher>().model.value.percentage =
+        box.read('Archer')[4];
+    Get.find<T9ControllerArcher>().model.value.t9Left = box.read('Archer')[2];
+  }
+  if (box.read('Footman') != null) {
+    Get.find<T9ControllerFootman>().model.value.percentage =
+        box.read('Footman')[4];
+    Get.find<T9ControllerFootman>().model.value.t9Left = box.read('Footman')[2];
+    
+  }
+}
