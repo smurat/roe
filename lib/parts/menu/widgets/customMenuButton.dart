@@ -25,9 +25,9 @@ class CustomMenuButton extends StatelessWidget {
         height: size.height * 0.20,
         paddingTop: 0,
         pressedImage: Image.asset(
-          "assets/buttonStock1.png",
+          "assets/buttonStock2.png",
         ),
-        unpressedImage: Image.asset("assets/buttonStock2.png"),
+        unpressedImage: Image.asset("assets/buttonStock3.png"),
         onTap: onPressed,
       ),
     );
