@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:son_roe/parts/t9calculator/pages/t9model.dart';
+import 'package:son_roe/parts/t9calculator/widgets/t9model.dart';
 
 class T9ControllerArcher extends GetxController {
   final model = T9Model(

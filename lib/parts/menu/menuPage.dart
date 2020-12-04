@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:son_roe/parts/t9calculator/t9menupage.dart';
+import 'package:son_roe/parts/t9calculator/pages/t9menupage.dart';
 
 import 'widgets/customMenuButton.dart';
 

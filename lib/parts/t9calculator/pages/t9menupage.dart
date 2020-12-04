@@ -5,9 +5,9 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:son_roe/parts/t9calculator/controller/t9controllerarch.dart';
 import 'package:son_roe/parts/t9calculator/controller/t9controllercav.dart';
 import 'package:son_roe/parts/t9calculator/controller/t9controllerfoot.dart';
-import 'package:son_roe/parts/t9calculator/pages/t9model.dart';
+import 'package:son_roe/parts/t9calculator/widgets/t9model.dart';
 
-import 'pages/t9mainpage.dart';
+import 't9mainpage.dart';
 
 class T9ManuPage extends StatelessWidget {
   GetStorage box = GetStorage();
@@ -117,29 +117,31 @@ class T9ManuPage extends StatelessWidget {
 }
 
 class T9MenuPageItemWidget extends StatelessWidget {
+  //TODO T9 TYPE PAGE MENU ITEM WIDGET
   const T9MenuPageItemWidget({
     Key key,
     @required this.image,
     this.title,
     this.controller,
   }) : super(key: key);
-  final String image;
 
+  final String image;
   final String title;
   final controller;
 
   @override
   Widget build(BuildContext context) {
     var itemHeight = MediaQuery.of(context).size.height * 0.154;
+    var padding = MediaQuery.of(context).size.width * 0.05;
     return Padding(
-      padding: const EdgeInsets.only(top: 16, left: 10, right: 10, bottom: 10),
+      padding:  EdgeInsets.all(padding),
       child: Container(
         height: itemHeight,
         decoration: BoxDecoration(
             border: Border.all(width: 0.2),
             boxShadow: [
               BoxShadow(
-                color: Colors.white.withOpacity(0.2),
+                color: Colors.white.withOpacity(0.15),
                 spreadRadius: 2,
                 offset: Offset(6, 6),
               )
@@ -152,7 +154,7 @@ class T9MenuPageItemWidget extends StatelessWidget {
               child: Image.asset(
                 image,
               ),
-              width: 120,
+              width: MediaQuery.of(context).size.width * 0.30,
             ),
             VerticalDivider(
               thickness: 1,
@@ -161,36 +163,41 @@ class T9MenuPageItemWidget extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(12.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Obx(() => LinearPercentIndicator(
-                          width: 180,
-                          lineHeight: 12,
-                          curve: Curves.linear,
-                          percent: controller.model.value.percentage,
-                          progressColor: Colors.blue,
-                          center: Text(
-                            (controller.model.value.percentage * 100)
-                                    .toStringAsFixed(0) +
-                                ' %',
-                            style: TextStyle(fontSize: 10),
-                          ),
-                        )),
-                  ),
-                  Row(
-                    children: [ 
-                      Text('Left Medal : '),
-                      Obx(() => Text('${controller.model.value.t9Left}'))
-                    ],
-                  )
-                ],
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Obx(() => LinearPercentIndicator(
+                              width: MediaQuery.of(context).size.width * 0.40,
+                              lineHeight: 12,
+                              curve: Curves.linear,
+                              percent: controller.model.value.percentage,
+                              progressColor: Colors.blue,
+                              center: Text(
+                                (controller.model.value.percentage * 100)
+                                        .toStringAsFixed(0) +
+                                    ' %',
+                                style: TextStyle(fontSize: 10),
+                              ),
+                            )),
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text('Left Medal : '),
+                        Obx(() => Text('${controller.model.value.t9Left}'))
+                      ],
+                    )
+                  ],
+                ),
               ),
             )
           ],
