@@ -5,9 +5,9 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:son_roe/parts/t9calculator/controller/t9controllerarch.dart';
 import 'package:son_roe/parts/t9calculator/controller/t9controllercav.dart';
 import 'package:son_roe/parts/t9calculator/controller/t9controllerfoot.dart';
-import 'package:son_roe/parts/t9calculator/widgets/t9model.dart';
+import 'package:son_roe/parts/t9calculator/t9model.dart';
 
-import 't9mainpage.dart';
+import '../t9researchpage/2-t9researchpage.dart';
 
 class T9ManuPage extends StatelessWidget {
   GetStorage box = GetStorage();
@@ -18,12 +18,15 @@ class T9ManuPage extends StatelessWidget {
         body: NestedScrollView(
             headerSliverBuilder: (context, innerBoxIsScrolled) {
               var imageHeight = MediaQuery.of(context).size.height * 0.256;
+
               return [
                 SliverAppBar(
                   expandedHeight: imageHeight,
                   flexibleSpace: FlexibleSpaceBar(
+                    collapseMode: CollapseMode.parallax,
                     background: Container(
                       decoration: BoxDecoration(
+                          color: Colors.transparent,
                           image: DecorationImage(
                               fit: BoxFit.fill,
                               image: AssetImage('assets/images/dragon.jpg'))),
@@ -45,12 +48,12 @@ class T9ManuPage extends StatelessWidget {
                     onTap: () async {
                       var list = await box.read('Footman');
 
-                      if (list != null) {
+                      /*   if (list != null) {
                         _updateValues(
                             Get.find<T9ControllerFootman>().model.value, list);
-                      }
+                      }*/
 
-                      Get.to(T9MainPage(
+                      Get.to(T9ResearchPage(
                         type: 'FOOTMAN T9',
                         controller: Get.find<T9ControllerFootman>(),
                         mainImage: 'assets/images/footman.jpg',
@@ -66,12 +69,12 @@ class T9ManuPage extends StatelessWidget {
                       onTap: () async {
                         var list = await box.read('Archer');
 
-                        if (list != null) {
+                        /*   if (list != null) {
                           _updateValues(
                               Get.find<T9ControllerArcher>().model.value, list);
-                        }
+                        }*/
 
-                        Get.to(T9MainPage(
+                        Get.to(T9ResearchPage(
                           type: 'ARCHER T9',
                           controller: Get.find<T9ControllerArcher>(),
                           mainImage: 'assets/images/archer.jpg',
@@ -86,12 +89,12 @@ class T9ManuPage extends StatelessWidget {
                     onTap: () async {
                       var list = await box.read('Cavalry');
 
-                      if (list != null) {
+                      /*   if (list != null) {
                         _updateValues(
                             Get.find<T9ControllerCavalry>().model.value, list);
-                      }
+                      }*/
 
-                      Get.to(T9MainPage(
+                      Get.to(T9ResearchPage(
                         type: 'CAVALRY T9',
                         controller: Get.find<T9ControllerCavalry>(),
                         mainImage: 'assets/images/cavalry.jpg',
@@ -134,7 +137,7 @@ class T9MenuPageItemWidget extends StatelessWidget {
     var itemHeight = MediaQuery.of(context).size.height * 0.154;
     var padding = MediaQuery.of(context).size.width * 0.05;
     return Padding(
-      padding:  EdgeInsets.all(padding),
+      padding: EdgeInsets.all(padding),
       child: Container(
         height: itemHeight,
         decoration: BoxDecoration(
@@ -192,8 +195,14 @@ class T9MenuPageItemWidget extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text('Left Medal : '),
-                        Obx(() => Text('${controller.model.value.t9Left}'))
+                        Text(
+                          'Left Medal : ',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        Obx(() => Text(
+                              '${controller.model.value.t9Left}',
+                              style: TextStyle(fontSize: 12),
+                            ))
                       ],
                     )
                   ],

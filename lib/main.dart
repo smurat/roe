@@ -6,10 +6,13 @@ import 'package:son_roe/parts/t9calculator/controller/t9controllerarch.dart';
 
 import 'package:son_roe/parts/t9calculator/controller/t9controllercav.dart';
 import 'package:son_roe/parts/t9calculator/controller/t9controllerfoot.dart';
+import 'package:son_roe/parts/t9calculator/t9model.dart';
 
+import 'parts/events/page1/1-eventMain.dart';
 import 'parts/menu/menuPage.dart';
 
 void main() async {
+  //FIXME Get Storage ve init KAPALI
   await GetStorage.init();
   initController();
   runApp(MyApp());
@@ -34,6 +37,7 @@ class MyApp extends StatelessWidget {
       // home: TestDosyasi(),
       home: MenuPage(),
       // home: TESTT9MenuPage(),
+      // home:EventMainPage()
     );
   }
 }
@@ -42,19 +46,31 @@ initValues() {
   GetStorage box = GetStorage();
 
   if (box.read('Cavalry') != null) {
-    Get.find<T9ControllerCavalry>().model.value.percentage =
-        box.read('Cavalry')[4];
-    Get.find<T9ControllerCavalry>().model.value.t9Left = box.read('Cavalry')[2];
+    T9Model model = Get.find<T9ControllerCavalry>().model.value;
+
+    model.levels = List<int>.from(box.read('Cavalry')[0]);
+    model.medals = List<int>.from(box.read('Cavalry')[1]);
+    model.t9Left = box.read('Cavalry')[2];
+    model.totalLeft = box.read('Cavalry')[3];
+    model.percentage = box.read('Cavalry')[4];
+   
   }
   if (box.read('Archer') != null) {
-    Get.find<T9ControllerArcher>().model.value.percentage =
-        box.read('Archer')[4];
-    Get.find<T9ControllerArcher>().model.value.t9Left = box.read('Archer')[2];
+    T9Model model = Get.find<T9ControllerArcher>().model.value;
+
+    model.levels = List<int>.from(box.read('Archer')[0]);
+    model.medals = List<int>.from(box.read('Archer')[1]);
+    model.t9Left = box.read('Archer')[2];
+    model.totalLeft = box.read('Archer')[3];
+    model.percentage = box.read('Archer')[4];
   }
   if (box.read('Footman') != null) {
-    Get.find<T9ControllerFootman>().model.value.percentage =
-        box.read('Footman')[4];
-    Get.find<T9ControllerFootman>().model.value.t9Left = box.read('Footman')[2];
-    
+    T9Model model = Get.find<T9ControllerFootman>().model.value;
+
+    model.levels = List<int>.from(box.read('Footman')[0]);
+    model.medals = List<int>.from(box.read('Footman')[1]);
+    model.t9Left = box.read('Footman')[2];
+    model.totalLeft = box.read('Footman')[3];
+    model.percentage = box.read('Footman')[4];
   }
 }

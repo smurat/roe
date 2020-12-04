@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
-import 'package:son_roe/parts/t9calculator/widgets/ResearcherContainer.dart';
-import 'package:son_roe/parts/t9calculator/widgets/t9model.dart';
+import 'package:son_roe/parts/t9calculator/pages/t9researchpage/widgets/ResearcherContainer.dart';
+import 'package:son_roe/parts/t9calculator/t9model.dart';
 
-class T9MainPage extends StatelessWidget {
-  T9MainPage(
+class T9ResearchPage extends StatelessWidget {
+  T9ResearchPage(
       {Key key,
       @required this.controller,
       @required this.type,
@@ -37,101 +37,97 @@ class T9MainPage extends StatelessWidget {
     'Chain Armor',
     'Empire Defender'
   ];
+
   final controller;
   final type;
   final mainImage;
-
+  
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: NestedScrollView(
-            headerSliverBuilder: (context, innerBoxIsScrolled) {
-              var imageHeight = MediaQuery.of(context).size.height * 0.256;
-              return <Widget>[
-                SliverAppBar(
-                  stretch: true,
-                  expandedHeight: imageHeight,
-                  pinned: true,
-                  flexibleSpace: FlexibleSpaceBar(
-                    centerTitle: false,
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              expandedHeight: MediaQuery.of(context).size.height * 0.256,
+              pinned: false,
+              floating: true,
+              snap: true,
+              flexibleSpace: FlexibleSpaceBar(
+                centerTitle: false,
+                collapseMode: CollapseMode.parallax,
 
-                    stretchModes: [
-                      StretchMode.zoomBackground,
-                      StretchMode.blurBackground,
-                      StretchMode.fadeTitle
-                    ],
-                    title: Text(type),
-                    background: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: AssetImage(mainImage))),
-                        ),
-                        Positioned(
-                          right: 0,
-                          child: Container(
-                            width: 100,
-                            height: 200,
-                            color: Colors.black87.withOpacity(0.4),
-                            child: Column(children: [
-                              Padding(
-                                padding: const EdgeInsets.only(top: 20),
-                                child: Obx(() => CircularPercentIndicator(
-                                      animateFromLastPercent: true,
-                                      progressColor: Colors.blue.shade400,
-                                      backgroundColor: Colors.white,
-                                      radius: 70,
-                                      lineWidth: 4,
-                                      percent:
-                                          controller.model.value.percentage,
-                                      center: Text(
-                                        '${(controller.model.value.percentage * 100).toStringAsFixed(0)} %', //TODO KALAN MEDAL %
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      animation: true,
-                                    )),
-                              ),
-                              SizedBox(
-                                height: 30,
-                              ),
-                              Center(
-                                child: Container(
-                                  height: 25,
-                                  color: Colors.black87.withOpacity(0.45),
-                                  width: 100,
-                                  child: Center(
-                                    child: Text(
-                                      'Left Cougrage',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 12),
-                                    ),
+                title: Text(type),
+                background: Stack(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.fill, image: AssetImage(mainImage))),
+                    ),
+                    Positioned(
+                      right: 0,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.25,
+                        height: MediaQuery.of(context).size.height * 0.264,
+                        color: Colors.black87.withOpacity(0.4),
+                        child: Column(children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top:
+                                    MediaQuery.of(context).size.height * 0.026),
+                            child: Obx(() => CircularPercentIndicator(
+                                  animateFromLastPercent: true,
+                                  progressColor: Colors.blue.shade400,
+                                  backgroundColor: Colors.white,
+                                  radius: 70,
+                                  lineWidth: 4,
+                                  percent: controller.model.value.percentage,
+                                  center: Text(
+                                    '${(controller.model.value.percentage * 100).toStringAsFixed(0)} %', //TODO KALAN MEDAL %
+                                    style: TextStyle(color: Colors.white),
                                   ),
-                                ),
-                              ),
-                              Container(
-                                height: 25,
-                                color: Colors.black87.withOpacity(0.45),
-                                width: 100,
-                                child: Center(
-                                  child: Obx(() => Text(
-                                        '${controller.model.value.t9Left}', //TODO kalanMEDAL
-                                        style: TextStyle(color: Colors.white),
-                                      )),
-                                ),
-                              ),
-                            ]),
+                                  animation: true,
+                                )),
                           ),
-                        ),
-                      ],
-                    ), //IMAGE gelecek
-                  ),
-                )
-              ];
-            },
-            body: ListView(children: [
+                          SizedBox(
+                            height: 30,
+                          ),
+                          Center(
+                            child: Container(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.032,
+                              color: Colors.black87.withOpacity(0.45),
+                              width: MediaQuery.of(context).size.width * 0.25,
+                              child: Center(
+                                child: Text(
+                                  'Left Cougrage',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 12),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.032,
+                            color: Colors.black87.withOpacity(0.45),
+                            width: MediaQuery.of(context).size.width * 0.25,
+                            child: Center(
+                              child: Obx(() => Text(
+                                    '${controller.model.value.t9Left}', //TODO kalanMEDAL
+                                    style: TextStyle(color: Colors.white),
+                                  )),
+                            ),
+                          ),
+                        ]),
+                      ),
+                    ),
+                  ],
+                ), //IMAGE gelecek
+              ),
+            ),
+            SliverList(
+                delegate: SliverChildListDelegate([
               Column(
                 children: [
                   Padding(
@@ -271,10 +267,9 @@ class T9MainPage extends StatelessWidget {
               SizedBox(
                 height: 50,
               ),
-              RaisedButton(onPressed: () {
-                print(MediaQuery.of(context).size.width);
-              })
-            ])),
+            ]))
+          ],
+        ),
       ),
     );
   }
@@ -300,22 +295,22 @@ class T9MainPage extends StatelessWidget {
     switch (controller.model.value.type) {
       case 'Footman':
         print('Footman');
-        box.write('Footman', _writeValueToLocal());
+        box.write('Footman', _saveValueToLocal());
         break;
       case 'Archer':
-        print(_writeValueToLocal());
-        box.write('Archer', _writeValueToLocal());
+        print(_saveValueToLocal());
+        box.write('Archer', _saveValueToLocal());
         break;
       case 'Cavalry':
-        print(_writeValueToLocal());
-        box.write('Cavalry', _writeValueToLocal());
+        print(_saveValueToLocal());
+        box.write('Cavalry', _saveValueToLocal());
 
         break;
       default:
     }
   }
 
-  List<dynamic> _writeValueToLocal() {
+  List<dynamic> _saveValueToLocal() {
     return [
       controller.model.value.levels,
       controller.model.value.medals,
