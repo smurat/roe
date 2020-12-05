@@ -11,29 +11,35 @@ class MenuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xFF222222),
-      child: Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(
-            title: Text('MainPage'),
-          ),
-          body: Center(
-            child: Column(
-              children: [
-                CustomMenuButton(
-                    onPressed: () {
-                      Get.to(T9ManuPage());
-                    },
-                    buttonTitle: 'T9 Calculator'),
-                CustomMenuButton(
-                    onPressed: () {
-                     
-                    },
-                    buttonTitle: 'Coming soon'),
-                CustomMenuButton(onPressed: () {}, buttonTitle: 'Coming soon'),
-                CustomMenuButton(onPressed: () {}, buttonTitle: 'Coming soon'),
-              ],
-            ),
-          )),
+      child: SafeArea(
+        child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: Center(
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 36),
+                    child: Center(
+                        child: Text(
+                      'RISE OF EMPIRES ICE AND FIRE',
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    )),
+                  ),
+                  CustomMenuButton(
+                      onPressed: () {
+                        Get.to(T9ManuPage());
+                      },
+                      buttonTitle: 'T9 Calculator'),
+                  CustomMenuButton(
+                      onPressed: () {}, buttonTitle: 'Coming soon'),
+                  CustomMenuButton(
+                      onPressed: () {}, buttonTitle: 'Coming soon'),
+                  CustomMenuButton(
+                      onPressed: () {}, buttonTitle: 'Coming soon'),
+                ],
+              ),
+            )),
+      ),
     );
   }
 }

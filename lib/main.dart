@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:son_roe/TEST/test.dart';
-import 'package:son_roe/parts/t9calculator/controller/t9controllerarch.dart';
-
-import 'package:son_roe/parts/t9calculator/controller/t9controllercav.dart';
-import 'package:son_roe/parts/t9calculator/controller/t9controllerfoot.dart';
-import 'package:son_roe/parts/t9calculator/t9model.dart';
-
-import 'parts/events/page1/1-eventMain.dart';
-import 'parts/menu/menuPage.dart';
+import 'package:son_roe/servisler.dart';
 
 void main() async {
   //FIXME Get Storage ve init KAPALI
