@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:son_roe/parts/t9calculator/pages/t9menupage/1-t9menupage.dart';
+import 'package:son_roe/parts/t9calculator/pages/t9menupage/t9menupage.dart';
+import 'package:son_roe/parts/zoneconflict/main_zoneconflict.dart';
 
 import 'widgets/customMenuButton.dart';
 
@@ -22,7 +23,10 @@ class MenuPage extends StatelessWidget {
                     child: Center(
                         child: Text(
                       'RISE OF EMPIRES ICE AND FIRE',
-                      style: TextStyle(fontSize: 24, color: Colors.white),
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.white,
+                      ),
                     )),
                   ),
                   CustomMenuButton(
@@ -31,7 +35,10 @@ class MenuPage extends StatelessWidget {
                       },
                       buttonTitle: 'T9 Calculator'),
                   CustomMenuButton(
-                      onPressed: () {}, buttonTitle: 'Coming soon'),
+                      onPressed: () {
+                        Get.to(ZoneConflictMainPage());
+                      },
+                      buttonTitle: 'Zone Conflict'),
                   CustomMenuButton(
                       onPressed: () {}, buttonTitle: 'Coming soon'),
                   CustomMenuButton(

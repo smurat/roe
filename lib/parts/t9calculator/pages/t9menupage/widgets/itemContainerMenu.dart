@@ -1,4 +1,4 @@
-import 'package:son_roe/servisler.dart';
+import 'package:son_roe/parts/t9calculator/services_t9.dart';
 
 class T9MenuPageItemWidget extends StatelessWidget {
   const T9MenuPageItemWidget({
@@ -81,12 +81,13 @@ class T9MenuPageItemWidget extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Left Medal : ',
+                          'Left Medal to Tier 9 :   ',
                           style: TextStyle(fontSize: 12),
                         ),
                         Obx(() => Text(
 // Left Medal Value
-                              '${controller.model.value.t9Left} to Tier 9',
+                              '${controller.model.value.t9Left} ',
+                              textAlign: TextAlign.center,
                               style: TextStyle(fontSize: 12),
                             ))
                       ],
@@ -100,4 +101,5 @@ class T9MenuPageItemWidget extends StatelessWidget {
       ),
     );
   }
+
 }

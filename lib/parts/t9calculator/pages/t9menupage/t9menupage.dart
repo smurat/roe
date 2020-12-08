@@ -1,4 +1,4 @@
-import 'package:son_roe/servisler.dart';
+import 'package:son_roe/parts/t9calculator/services_t9.dart';
 
 
 class T9ManuPage extends StatelessWidget {
@@ -36,13 +36,13 @@ class T9ManuPage extends StatelessWidget {
                   InkWell(
                     child: T9MenuPageItemWidget(
                       image: 'assets/images/f1.png',
-                      controller: Get.find<T9ControllerFootman>(),
+                      controller: Get.find<ControllerT9Footman>(),
                       title: 'FOOTMAN',
                     ),
                     onTap: () async {
                       Get.to(T9ResearchPage(
                         type: 'FOOTMAN T9',
-                        controller: Get.find<T9ControllerFootman>(),
+                        controller: Get.find<ControllerT9Footman>(),
                         appbarImage: 'assets/images/footman.jpg',
                       ));
                     },
@@ -51,13 +51,13 @@ class T9ManuPage extends StatelessWidget {
                   InkWell(
                       child: T9MenuPageItemWidget(
                         image: 'assets/images/a11.png',
-                        controller: Get.find<T9ControllerArcher>(),
+                        controller: Get.find<ControllerT9Archer>(),
                         title: 'ARCHER',
                       ),
                       onTap: () async {
                         Get.to(T9ResearchPage(
                           type: 'ARCHER T9',
-                          controller: Get.find<T9ControllerArcher>(),
+                          controller: Get.find<ControllerT9Archer>(),
                           appbarImage: 'assets/images/archer.jpg',
                         ));
 // Cavalry Item Container
@@ -65,13 +65,13 @@ class T9ManuPage extends StatelessWidget {
                   InkWell(
                     child: T9MenuPageItemWidget(
                       image: 'assets/images/c1.png',
-                      controller: Get.find<T9ControllerCavalry>(),
+                      controller: Get.find<ControllerT9Cavalry>(),
                       title: 'CAVALRY',
                     ),
                     onTap: () async {
                       Get.to(T9ResearchPage(
                         type: 'CAVALRY T9',
-                        controller: Get.find<T9ControllerCavalry>(),
+                        controller: Get.find<ControllerT9Cavalry>(),
                         appbarImage: 'assets/images/cavalry.jpg',
                       ));
                     },

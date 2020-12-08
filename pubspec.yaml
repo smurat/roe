@@ -59,6 +59,8 @@ flutter:
      - assets/images/cavalry.jpg
      - assets/images/footman.jpg
      - assets/images/archer.jpg
+     - assets/images/zoneconf1.jpg
+     - assets/images/zoneconf2.jpg
      - assets/images/dragon.jpg
      - assets/images/f1.png
      - assets/images/a1.png

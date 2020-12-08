@@ -1,5 +1,5 @@
 
-import 'package:son_roe/servisler.dart';
+import 'package:son_roe/parts/t9calculator/services_t9.dart';
 
 class T9ResearchPage extends StatelessWidget {
   T9ResearchPage(
@@ -179,13 +179,13 @@ class T9ResearchPage extends StatelessWidget {
   List<String> _techTitles(T9Model model) {
     switch (model.type) {
       case 'Footman':
-        return Constants.footmanResearchTitles;
+        return ConstantsT9.footmanResearchTitles;
         break;
       case 'Archer':
-        return Constants.archerResearchTitles;
+        return ConstantsT9.archerResearchTitles;
         break;
       case 'Cavalry':
-        return Constants.cavalryResearchTitles;
+        return ConstantsT9.cavalryResearchTitles;
         break;
       default:
         return ['null'];
