@@ -39,10 +39,7 @@ class _TestDosyasiState extends State<TestDosyasi> {
           onPressed: () {
             myTime();
           },
-        ),
-        appBar: AppBar(
-          title: Text('TEST'),
-        ),
+        ),        
         body: FutureBuilder(
           future: myTime(),
           builder: (context, snapshot) {
@@ -68,9 +65,7 @@ class _TestDosyasiState extends State<TestDosyasi> {
       var tzdb = await DateTimeZoneProviders.tzdb;
       var noronha = await tzdb['America/Noronha'];
       var now = Instant.now();
-      print('1-> Noronha ==== ${now.inZone(noronha).clockTime}');
-      
-      
+      print('1-> Noronha ==== ${now.inZone(noronha).clockTime}');     
 
      // print('2-> '+DateTimeZone.local.toString());
      // print('3-> UTC time ${now}');
