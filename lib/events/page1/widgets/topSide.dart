@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:son_roe/events/page1/controllertime.dart';
+import 'package:son_roe/parts/t9calculator/utility/services_t9.dart';
+
+TextStyle _hourStyle = TextStyle(color: Colors.white, fontSize: 20);
 
 class TopSide extends StatelessWidget {
   const TopSide({
@@ -12,24 +16,16 @@ class TopSide extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            children: [
-              TopLeftWidget(),
-              TopRightWidget()
-            ],
+            children: [TopLeftWidget(), TopRightWidget()],
           ),
           Row(
-            children: [
-              BottomLeftWidget(),
-              BottomRightWidget()
-            ],
+            children: [BottomLeftWidget(), BottomRightWidget()],
           ),
         ],
       ),
     );
   }
 }
-
-
 
 class TopRightWidget extends StatelessWidget {
   const TopRightWidget({
@@ -62,6 +58,10 @@ class TopLeftWidget extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.31,
         height: MediaQuery.of(context).size.height * 0.08,
         color: Colors.grey.shade800,
+        child: Obx(() => Center(
+                child: Text(
+              '${Get.find<ControllerServerTime>().model.value.serverTime}',style: _hourStyle,
+            ))),
       ),
     );
   }
@@ -80,6 +80,9 @@ class BottomLeftWidget extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.31,
         height: MediaQuery.of(context).size.height * 0.08,
         color: Colors.grey.shade800,
+        child: Obx(() => Center(
+            child: Text(
+                '${Get.find<ControllerServerTime>().model.value.reverse}',style: _hourStyle))),
       ),
     );
   }
@@ -102,4 +105,3 @@ class BottomRightWidget extends StatelessWidget {
     );
   }
 }
-

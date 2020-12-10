@@ -1,10 +1,17 @@
-import 'package:son_roe/parts/t9calculator/services_t9.dart';
+import 'package:flutter/services.dart';
+import 'package:son_roe/events/page1/controllertime.dart';
+import 'package:son_roe/locator.dart';
+import 'package:son_roe/parts/t9calculator/utility/services_t9.dart';
 import 'package:son_roe/parts/zoneconflict/controller/controller_zoneconflict.dart';
 import 'package:son_roe/parts/zoneconflict/utility/model_zoneconflict.dart';
+import 'package:time_machine/time_machine.dart';
 
-//TODO ZONE CONFLICT STORAGE İŞLERİNİ HALLET
+//TODO GATGERING ISINI HALLET
+
 void main() async {
-  await GetStorage.init();
+  setupLocator(); // Initialize SingletonTypeOfInstance
+  await GetStorage.init(); // Initialize GetStorage
+  _startTimeZoneMachine();
   initController();
   runApp(MyApp());
 }
@@ -23,12 +30,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home: TestDosyasi(),
       home: MenuPage(),
-      // home: TESTT9MenuPage(),
-      // home:EventMainPage()
     );
   }
+}
+
+_startTimeZoneMachine() async {
+  await TimeMachine.initialize({
+    'rootBundle': rootBundle,
+  });
 }
 
 /// stat the contollers
@@ -37,11 +47,13 @@ void _initControllers() {
   Get.put(ControllerT9Archer());
   Get.put(ControllerT9Footman());
   Get.put(ControllerZoneConflict());
+  Get.put(ControllerServerTime());
 }
 
 void _initValues() {
-  GetStorage box = GetStorage();
+  GetStorage box = getIt<GetStorage>();
 
+  // Dispatching values of Cavalry
   if (box.read('Cavalry') != null) {
     T9Model model = Get.find<ControllerT9Cavalry>().model.value;
 
@@ -51,6 +63,7 @@ void _initValues() {
     model.totalLeft = box.read('Cavalry')[3];
     model.percentage = box.read('Cavalry')[4];
   }
+  // Dispatching values of Archer
   if (box.read('Archer') != null) {
     T9Model model = Get.find<ControllerT9Archer>().model.value;
 
@@ -60,6 +73,7 @@ void _initValues() {
     model.totalLeft = box.read('Archer')[3];
     model.percentage = box.read('Archer')[4];
   }
+  // Dispatching values of Footman
   if (box.read('Footman') != null) {
     T9Model model = Get.find<ControllerT9Footman>().model.value;
 
@@ -69,6 +83,7 @@ void _initValues() {
     model.totalLeft = box.read('Footman')[3];
     model.percentage = box.read('Footman')[4];
   }
+  // Dispatching values of Zone Conflict
   if (box.read('Zone Conflict') != null) {
     ZoneConflictModel model = Get.find<ControllerZoneConflict>().model.value;
     model.levels = List<int>.from(box.read('Zone Conflict')[0]);
