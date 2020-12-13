@@ -1,15 +1,19 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:son_roe/events/model_events.dart';
 import 'package:son_roe/events/page1/controllertime.dart';
 import 'package:son_roe/events/page1/eventMain.dart';
 
 import 'package:son_roe/parts/gathering/main_gather.dart';
 import 'package:son_roe/parts/t9calculator/pages/t9menupage/t9menupage.dart';
 import 'package:son_roe/parts/zoneconflict/main_zoneconflict.dart';
+
 import 'package:time_machine/time_machine.dart';
 
+import 'locator.dart';
 import 'parts/menu/widgets/customMenuButton.dart';
 
 class MenuPage extends StatelessWidget {
@@ -20,6 +24,7 @@ class MenuPage extends StatelessWidget {
   LocalTime _reverseTime;
 
   ControllerServerTime _controller = Get.find<ControllerServerTime>();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,17 +57,21 @@ class MenuPage extends StatelessWidget {
                       },
                       buttonTitle: 'Zone Conflict'),
                   CustomMenuButton(
-                      onPressed: () {
-                        Get.to(GatheringMainPage());
+                      onPressed: ()  {
+                        //  Get.to(GatheringMainPage());
+
+                        //---------TEST AREA ---------//
+                        
+                        //---------TEST AREA ---------//
                       },
                       buttonTitle: 'Gather'),
                   CustomMenuButton(
                       onPressed: () async {
                         _zonedDateTime = await _fetchServerTime();
-                        _startTimer(); //FIXME START TIMER
+//FIXME START TIMER
+                        _startTimer();
                         Get.to(EventMainPage(
-                          timer: _timer,
-                        ));
+                            timer: _timer, model: _controller.modelList));
                       },
                       buttonTitle: 'Events'),
                 ],
@@ -73,23 +82,24 @@ class MenuPage extends StatelessWidget {
   }
 
   _startTimer() async {
-    _currentTime = _zonedDateTime
-        .clockTime; // Small adjustment due to waiting future value
+    _currentTime = _zonedDateTime.clockTime; // Assigning hh:mm:ss
+
     _reverseTime = LocalTime(0, (60 - _currentTime.minuteOfHour),
         (60 - _currentTime.secondOfMinute));
 
+    int day = _zonedDateTime.dayOfWeek.value;
+
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      print(_currentTime);
       _currentTime = _currentTime.addSeconds(1);
       _reverseTime = _reverseTime.subtractSeconds(1);
+    
       _controller.updateTime(
-          localTime: _currentTime, reverseTime: _reverseTime);
+          localTime: _currentTime, reverseTime: _reverseTime,day: day);
     });
   }
 
   /// Returns Server Time
   Future<ZonedDateTime> _fetchServerTime() async {
-    print('Future<ZonedDateTime> ');
     try {
       var tzdb = await DateTimeZoneProviders.tzdb;
       var noronha = await tzdb['America/Noronha'];
@@ -103,3 +113,18 @@ class MenuPage extends StatelessWidget {
     }
   }
 }
+
+/*
+ 
+  Future<ModelEvents> _fetchJsonData(BuildContext context) async {
+    /*  String jsonData =
+        await DefaultAssetBundle.of(context).loadString('assets/events.json');*/
+
+    String jsonData = await rootBundle.loadString('assets/events.json');
+
+    final res = json.decode(jsonData);
+    ModelEvents model = ModelEvents.fromMap(res);
+    // print(model.weekday[0].daycontents[0].eventtitle);
+    return model;
+  }
+ */

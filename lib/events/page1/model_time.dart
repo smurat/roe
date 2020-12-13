@@ -7,9 +7,11 @@ class ModelServerTime {
   int min;
   int hr;
   int day;
-  ModelServerTime({this.serverTime,this.reverse}) {
+  int nextEventHr;
+  ModelServerTime({this.serverTime, this.reverse, this.day}) {
     this.sec = serverTime.secondOfMinute;
     this.min = serverTime.minuteOfHour;
     this.hr = serverTime.hourOfDay;
+    this.nextEventHr = serverTime.hourOfDay + 1;
   }
 }
