@@ -1,7 +1,8 @@
 import 'package:son_roe/parts/zoneconflict/utility/services_zoneconflict.dart';
 
-//TODO SAVE İŞİNİ HALLER
 
+
+// ignore: must_be_immutable
 class ZoneConflictMainPage extends StatelessWidget {
   ControllerZoneConflict _controller = Get.find<ControllerZoneConflict>();
   @override

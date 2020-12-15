@@ -11,8 +11,9 @@ import 'package:time_machine/time_machine.dart';
 void main() async {
   setupLocator(); // Initialize SingletonTypeOfInstance
   await GetStorage.init(); // Initialize GetStorage
-  _startTimeZoneMachine();
+  await _startTimeZoneMachine();
   initController();
+
   runApp(MyApp());
 }
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-_startTimeZoneMachine() async {
+Future _startTimeZoneMachine() async {
   await TimeMachine.initialize({
     'rootBundle': rootBundle,
   });
@@ -52,6 +53,9 @@ void _initControllers() {
 
 void _initValues() {
   GetStorage box = getIt<GetStorage>();
+
+  Get.find<ControllerServerTime>().sunday.value = 5;//FIXME Kullanıcıdan Gelen Seçmeli PAZAR
+
 
   // Dispatching values of Cavalry
   if (box.read('Cavalry') != null) {
