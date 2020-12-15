@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class BottomSide extends StatelessWidget {
@@ -8,6 +7,15 @@ class BottomSide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Expanded(
+        child: Scaffold(
+      backgroundColor: Colors.transparent,
+      body: ListView.builder(
+        itemCount: 3,
+        itemBuilder: (BuildContext context, int index) {
+          
+        },
+      ),
+    ));
   }
 }

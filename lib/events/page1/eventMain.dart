@@ -1,29 +1,28 @@
-import 'dart:async';
-
-import 'package:flutter/material.dart';
-import 'package:son_roe/events/model_events.dart';
-import 'package:son_roe/parts/t9calculator/utility/services_t9.dart';
+import 'package:son_roe/events/utility/services_event.dart';
 
 import 'widgets/bottomSide.dart';
 import 'widgets/middleSide.dart';
 import 'widgets/topSide.dart';
 
 class EventMainPage extends StatelessWidget {
-  const EventMainPage({
-    Key key,
-    @required Timer timer,
-    @required ModelEvents model,
-  })  : _timer = timer,
-        _eventModel = model,
+  const EventMainPage(
+      {Key key,
+      @required Timer timer,
+      @required ModelEvents eventModel,
+      @required List contentList})
+      : _timer = timer,
+        _eventModel = eventModel,
+        _contentList = contentList,
         super(key: key);
   final _timer;
   final _eventModel;
+  final _contentList;
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        print('timer closed');        
+        print('timer closed');
         _timer.cancel();
         return true;
       },
@@ -34,8 +33,12 @@ class EventMainPage extends StatelessWidget {
         ),
         body: Column(
           children: [
-            TopSide(model: _eventModel,),
-            MiddleSide(),
+            TopSide(
+              model: _eventModel,
+            ),
+            MiddleSide(
+              contentList: _contentList,
+            ),
             BottomSide(),
           ],
         ),

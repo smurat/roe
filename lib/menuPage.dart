@@ -1,27 +1,17 @@
-import 'dart:async';
-import 'dart:convert';
+import 'dart:developer';
 
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:son_roe/events/model_events.dart';
-import 'package:son_roe/events/page1/controllertime.dart';
-import 'package:son_roe/events/page1/eventMain.dart';
-
-import 'package:son_roe/parts/gathering/main_gather.dart';
-import 'package:son_roe/parts/t9calculator/pages/t9menupage/t9menupage.dart';
-import 'package:son_roe/parts/zoneconflict/main_zoneconflict.dart';
-
+import 'package:son_roe/events/utility/services_event.dart';
 import 'package:time_machine/time_machine.dart';
-
-import 'locator.dart';
 import 'parts/menu/widgets/customMenuButton.dart';
 
+// ignore: must_be_immutable
 class MenuPage extends StatelessWidget {
   Timer _timer;
   bool isTimerOn = true;
   ZonedDateTime _zonedDateTime;
   LocalTime _currentTime;
   LocalTime _reverseTime;
+  int day;
 
   ControllerServerTime _controller = Get.find<ControllerServerTime>();
 
@@ -57,21 +47,27 @@ class MenuPage extends StatelessWidget {
                       },
                       buttonTitle: 'Zone Conflict'),
                   CustomMenuButton(
-                      onPressed: ()  {
+                      onPressed: () {
                         //  Get.to(GatheringMainPage());
 
                         //---------TEST AREA ---------//
-                        
+
                         //---------TEST AREA ---------//
                       },
                       buttonTitle: 'Gather'),
                   CustomMenuButton(
                       onPressed: () async {
                         _zonedDateTime = await _fetchServerTime();
-//FIXME START TIMER
-                        _startTimer();
+                        _initEventPage();
                         Get.to(EventMainPage(
-                            timer: _timer, model: _controller.modelList));
+                          timer: _timer,
+                          eventModel: _controller.modelList,
+                          contentList: _controller
+                              .modelList
+                              .weekday[_zonedDateTime.dayOfWeek.value - 1]
+                              .daycontents[_controller.model.value.hr]
+                              .eventContent,
+                        ));
                       },
                       buttonTitle: 'Events'),
                 ],
@@ -81,21 +77,27 @@ class MenuPage extends StatelessWidget {
     );
   }
 
-  _startTimer() async {
+  _initEventPage() async {
+    print(Timeline.now.milliseconds);
     _currentTime = _zonedDateTime.clockTime; // Assigning hh:mm:ss
 
-    _reverseTime = LocalTime(0, (60 - _currentTime.minuteOfHour),
-        (60 - _currentTime.secondOfMinute));
+    _reverseTime = LocalTime(0, (59 - _currentTime.minuteOfHour),
+        (60 - _currentTime.secondOfMinute)); // Kalan süre
 
-    int day = _zonedDateTime.dayOfWeek.value;
+    // Hangi günde olduğumuzu çağır
 
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
       _currentTime = _currentTime.addSeconds(1);
       _reverseTime = _reverseTime.subtractSeconds(1);
-    
+      day = _zonedDateTime.dayOfWeek.value - 1;
+
       _controller.updateTime(
-          localTime: _currentTime, reverseTime: _reverseTime,day: day);
+          // Modeli güncelle
+          localTime: _currentTime,
+          reverseTime: _reverseTime,
+          day: day);
     });
+    print(Timeline.now.milliseconds);
   }
 
   /// Returns Server Time
@@ -105,26 +107,10 @@ class MenuPage extends StatelessWidget {
       var noronha = await tzdb['America/Noronha'];
       var now = Instant.now();
 
-      return now.inZone(noronha); //11:52:29
-
+      return now.inZone(noronha);
     } catch (e) {
       print('HATA :> ' + e);
       return null;
     }
   }
 }
-
-/*
- 
-  Future<ModelEvents> _fetchJsonData(BuildContext context) async {
-    /*  String jsonData =
-        await DefaultAssetBundle.of(context).loadString('assets/events.json');*/
-
-    String jsonData = await rootBundle.loadString('assets/events.json');
-
-    final res = json.decode(jsonData);
-    ModelEvents model = ModelEvents.fromMap(res);
-    // print(model.weekday[0].daycontents[0].eventtitle);
-    return model;
-  }
- */

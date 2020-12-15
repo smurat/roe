@@ -1,6 +1,7 @@
 import 'package:son_roe/parts/t9calculator/utility/services_t9.dart';
 
 
+// ignore: must_be_immutable
 class T9ManuPage extends StatelessWidget {
   GetStorage box = GetStorage();
   @override

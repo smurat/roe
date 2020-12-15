@@ -49,11 +49,13 @@ void _initControllers() {
   Get.put(ControllerT9Footman());
   Get.put(ControllerZoneConflict());
   Get.put(ControllerServerTime());
-  //Get.find<ControllerServerTime>().sunday.value = 5;
 }
 
 void _initValues() {
   GetStorage box = getIt<GetStorage>();
+
+  Get.find<ControllerServerTime>().sunday.value = 5;//FIXME Kullanıcıdan Gelen Seçmeli PAZAR
+
 
   // Dispatching values of Cavalry
   if (box.read('Cavalry') != null) {

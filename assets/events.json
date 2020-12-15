@@ -3735,7 +3735,6 @@
             }
           ]
         }
-        
       ]
     },
     {
@@ -7458,7 +7457,6 @@
             }
           ]
         }
-        
       ]
     },
     {
@@ -11184,14 +11182,13 @@
             }
           ]
         }
-        
       ]
     },
     {
       "titleofweekday": "Thursday",
       "daycontents": [
         {
-          "eventtitle": "ticket+zombies",
+          "eventtitle": "Hero Recruitment/Kill Zombies",
           "eventContent": [
             "Use one Super Recruitment Ticket 200k",
             "Use one Advanced Recruitment Ticket 50k",
@@ -11220,6 +11217,478 @@
                 "30K",
                 "230K",
                 "930K"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Building Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x20K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x100",
+                "x1",
+                "x50K",
+                "x50K",
+                "x32K",
+                "x24K",
+                "135 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x500",
+                "80K",
+                "x200K",
+                "100K",
+                "100K",
+                "64K",
+                "48K",
+                "195 min"
+              ]
+            },
+            {
+              "casltelv": "9-10",
+              "eventcost": [
+                "40K",
+                "240K",
+                "1.14M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Building Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x25K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x200",
+                "x1",
+                "x100K",
+                "x100K",
+                "x64K",
+                "x48K",
+                "195 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1000",
+                "150K",
+                "x200K",
+                "150K",
+                "150K",
+                "96K",
+                "72K",
+                "375 min"
+              ]
+            },
+            {
+              "casltelv": "11-13",
+              "eventcost": [
+                "60K",
+                "360K",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Building Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x55K",
+                "x10K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x400",
+                "x1",
+                "x190K",
+                "x190K",
+                "x124K",
+                "x93K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1500",
+                "200K",
+                "1",
+                "x300K",
+                "240K",
+                "240K",
+                "156K",
+                "117K",
+                "450 min"
+              ]
+            },
+            {
+              "casltelv": "14-16",
+              "eventcost": [
+                "60K",
+                "360K",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Building Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x65K",
+                "110 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x500",
+                "x1",
+                "x400K",
+                "x400K",
+                "x260K",
+                "x195K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2000",
+                "450K",
+                "x1",
+                "x550K",
+                "400K",
+                "400K",
+                "260K",
+                "195K",
+                "610 min"
+              ]
+            },
+            {
+              "casltelv": "17-19",
+              "eventcost": [
+                "80K",
+                "480K",
+                "2.48M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Building Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x125K",
+                "110 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x600",
+                "x1",
+                "x550K",
+                "x550K",
+                "x360K",
+                "x270K",
+                "400 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2500",
+                "600K",
+                "x1",
+                "x750K",
+                "550K",
+                "550K",
+                "360K",
+                "270K",
+                "800 min"
+              ]
+            },
+            {
+              "casltelv": "20-22",
+              "eventcost": [
+                "100K",
+                "700K",
+                "2.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Building Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x150K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x700",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "750K",
+                "x1",
+                "x1M",
+                "950K",
+                "950K",
+                "620K",
+                "465K",
+                "850 min"
+              ]
+            },
+            {
+              "casltelv": "23-24",
+              "eventcost": [
+                "Null",
+                "Null",
+                "Null"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Building Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x200K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1000",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3500",
+                "900K",
+                "x1",
+                "x1M",
+                "1.25M",
+                "1.25M",
+                "820K",
+                "615K",
+                "1.15K min"
+              ]
+            },
+            {
+              "casltelv": "25",
+              "eventcost": [
+                "100K",
+                "800K",
+                "3.8M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Building Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x275K",
+                "220 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1500",
+                "x1",
+                "1.2M",
+                "1.2M",
+                "780K",
+                "585K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Building Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x4000",
+                "1100K",
+                "x1",
+                "1M",
+                "1.5M",
+                "1.5M",
+                "980K",
+                "735K",
+                "1.45K min"
+              ]
+            }
+          ]
+        },
+        {
+          "eventtitle": "All Hero Development",
+          "eventContent": [
+            "Exchange and obtain 1 wisdom medal",
+            "Spend 1 Wisdom Medal",
+            "Gaining 10 Hero Exp",
+            "Unlock a skill for any hero 20k",
+            "Use 1 Normal Recruitment Ticket 10k",
+            "Use one Advanced Recruitment Ticket 50k",
+            "Use one Super Recruitment Ticket 200k"
+          ],
+          "castlelv": [
+            {
+              "casltelv": "6-8",
+              "eventcost": [
+                "40K",
+                "240K",
+                "1.04M"
               ],
               "bluechesttitle": [
                 "Gold",
@@ -11273,9 +11742,1453 @@
             {
               "casltelv": "9-10",
               "eventcost": [
+                "60",
+                "360",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x25K",
+                "x15K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x200",
+                "x1",
+                "x100K",
+                "x100K",
+                "x64K",
+                "x48K",
+                "195 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1000",
+                "150K",
+                "x200K",
+                "150K",
+                "150K",
+                "96K",
+                "72K",
+                "375 min"
+              ]
+            },
+            {
+              "casltelv": "11-13",
+              "eventcost": [
+                "80",
+                "480K",
+                "2.48M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x55K",
+                "x25K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x400",
+                "x1",
+                "x190K",
+                "x190K",
+                "x124K",
+                "x93K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1500",
+                "200K",
+                "1",
+                "x300K",
+                "240K",
+                "240K",
+                "156K",
+                "117K",
+                "450 min"
+              ]
+            },
+            {
+              "casltelv": "14-16",
+              "eventcost": [
+                "100",
+                "600K",
+                "2.6M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x65K",
+                "40K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x500",
+                "x1",
+                "x400K",
+                "x400K",
+                "x260K",
+                "x195K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2000",
+                "450K",
+                "x1",
+                "x850K",
+                "250",
+                "250",
+                "160K",
+                "120K",
+                "500 min"
+              ]
+            },
+            {
+              "casltelv": "17-19",
+              "eventcost": [
+                "100K",
+                "700K",
+                "2.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x125K",
+                "75K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x600",
+                "x1",
+                "x550K",
+                "x550K",
+                "x360K",
+                "x270K",
+                "400 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2500",
+                "600K",
+                "x1",
+                "x1.3M",
+                "300K",
+                "300K",
+                "200K",
+                "150K",
+                "800 min"
+              ]
+            },
+            {
+              "casltelv": "20-22",
+              "eventcost": [
+                "100K",
+                "700K",
+                "3.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x150K",
+                "100K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x700",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "750K",
+                "x1",
+                "x2M",
+                "450K",
+                "450K",
+                "300K",
+                "225K",
+                "850 min"
+              ]
+            },
+            {
+              "casltelv": "23-24",
+              "eventcost": [
+                "100K",
+                "800K",
+                "3.8M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x200K",
+                "150K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1000",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3500",
+                "900K",
+                "x1",
+                "x2.75M",
+                "750K",
+                "750K",
+                "500K",
+                "375KK",
+                "1.15K min"
+              ]
+            },
+            {
+              "casltelv": "25",
+              "eventcost": [
+                "200K",
+                "1M",
+                "4M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x275K",
+                "250K",
+                "220 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1500",
+                "x1",
+                "1.2M",
+                "1.2M",
+                "780K",
+                "585K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "1100K",
+                "x1",
+                "3.25M",
+                "750K",
+                "750K",
+                "500K",
+                "375K",
+                "1.15K min"
+              ]
+            }
+          ]
+        },
+        {
+          "eventtitle": "Spend-Acquire Wisdom Medals/Kill Zombies",
+          "eventContent": [
+            "Unlock a skill for any hero 20k",
+            "Exchange and obtain 1 wisdom medal",
+            "Spend 1 Wisdom Medal",
+            "Kill a Lvl 15 Zombie 4.8k",
+            "Kill a Lvl 14 Zombie 4.6k",
+            "Kill a Lvl 13 Zombie 4.4k",
+            "Kill a Lvl 12 Zombie 4.2k",
+            "Kill a Lvl 11 Zombie 4k",
+            "Kill a Lvl 10 Zombie 3.8k",
+            "Kill a Lvl 9 Zombie 3.6k",
+            "Kill a Lvl 8 Zombie 3.4k",
+            "Kill a Lvl 7 Zombie 3.2k",
+            "Kill a Lvl 6 Zombie 3k",
+            "Kill a Lvl 5 Zombie 2.8k",
+            "Kill a Lvl 4 Zombie 2.6k",
+            "Kill a Lvl 3 Zombie 2.4k",
+            "Kill a Lvl 2 Zombie 2.2k",
+            "Kill a Lvl 1 Zombie 2k"
+          ],
+          "castlelv": [
+            {
+              "casltelv": "6-8",
+              "eventcost": [
+                "30K",
+                "230K",
+                "930K"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x20K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x100",
+                "x1",
+                "x50K",
+                "x50K",
+                "x32K",
+                "x24K",
+                "135 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x500",
+                "80K",
+                "x200K",
+                "100K",
+                "100K",
+                "64K",
+                "48K",
+                "195 min"
+              ]
+            },
+            {
+              "casltelv": "9-10",
+              "eventcost": [
                 "40K",
                 "240K",
                 "1.14M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x25K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x200",
+                "x1",
+                "x100K",
+                "x100K",
+                "x64K",
+                "x48K",
+                "195 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1000",
+                "150K",
+                "x200K",
+                "150K",
+                "150K",
+                "96K",
+                "72K",
+                "375 min"
+              ]
+            },
+            {
+              "casltelv": "11-13",
+              "eventcost": [
+                "60K",
+                "360K",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x55K",
+                "x10K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x400",
+                "x1",
+                "x190K",
+                "x190K",
+                "x124K",
+                "x93K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1500",
+                "200K",
+                "1",
+                "x300K",
+                "240K",
+                "240K",
+                "156K",
+                "117K",
+                "450 min"
+              ]
+            },
+            {
+              "casltelv": "14-16",
+              "eventcost": [
+                "60K",
+                "360K",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x65K",
+                "110 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x500",
+                "x1",
+                "x400K",
+                "x400K",
+                "x260K",
+                "x195K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2000",
+                "450K",
+                "x1",
+                "x550K",
+                "400K",
+                "400K",
+                "260K",
+                "195K",
+                "610 min"
+              ]
+            },
+            {
+              "casltelv": "17-19",
+              "eventcost": [
+                "80K",
+                "480K",
+                "2.48M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x125K",
+                "110 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x600",
+                "x1",
+                "x550K",
+                "x550K",
+                "x360K",
+                "x270K",
+                "400 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2500",
+                "600K",
+                "x1",
+                "x750K",
+                "550K",
+                "550K",
+                "360K",
+                "270K",
+                "800 min"
+              ]
+            },
+            {
+              "casltelv": "20-22",
+              "eventcost": [
+                "100K",
+                "700K",
+                "2.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x150K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x700",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "750K",
+                "x1",
+                "x1M",
+                "950K",
+                "950K",
+                "620K",
+                "465K",
+                "850 min"
+              ]
+            },
+            {
+              "casltelv": "23-24",
+              "eventcost": [
+                "Null",
+                "Null",
+                "Null"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x200K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1000",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3500",
+                "900K",
+                "x1",
+                "x1M",
+                "1.25M",
+                "1.25M",
+                "820K",
+                "615K",
+                "1.15K min"
+              ]
+            },
+            {
+              "casltelv": "25",
+              "eventcost": [
+                "100K",
+                "800K",
+                "3.8M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x275K",
+                "220 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1500",
+                "x1",
+                "1.2M",
+                "1.2M",
+                "780K",
+                "585K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x4000",
+                "1100K",
+                "x1",
+                "1M",
+                "1.5M",
+                "1.5M",
+                "980K",
+                "735K",
+                "1.45K min"
+              ]
+            }
+          ]
+        },
+        {
+          "eventtitle": "All Hero Development",
+          "eventContent": [
+            "Exchange and obtain 1 wisdom medal",
+            "Spend 1 Wisdom Medal",
+            "Gaining 10 Hero Exp",
+            "Unlock a skill for any hero 20k",
+            "Use 1 Normal Recruitment Ticket 10k",
+            "Use one Advanced Recruitment Ticket 50k",
+            "Use one Super Recruitment Ticket 200k"
+          ],
+          "castlelv": [
+            {
+              "casltelv": "6-8",
+              "eventcost": [
+                "40K",
+                "240K",
+                "1.04M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x20K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x100",
+                "x1",
+                "x50K",
+                "x50K",
+                "x32K",
+                "x24K",
+                "135 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x500",
+                "80K",
+                "x200K",
+                "100K",
+                "100K",
+                "64K",
+                "48K",
+                "195 min"
+              ]
+            },
+            {
+              "casltelv": "9-10",
+              "eventcost": [
+                "60",
+                "360",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x25K",
+                "x15K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x200",
+                "x1",
+                "x100K",
+                "x100K",
+                "x64K",
+                "x48K",
+                "195 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1000",
+                "150K",
+                "x200K",
+                "150K",
+                "150K",
+                "96K",
+                "72K",
+                "375 min"
+              ]
+            },
+            {
+              "casltelv": "11-13",
+              "eventcost": [
+                "80",
+                "480K",
+                "2.48M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x55K",
+                "x25K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x400",
+                "x1",
+                "x190K",
+                "x190K",
+                "x124K",
+                "x93K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1500",
+                "200K",
+                "1",
+                "x300K",
+                "240K",
+                "240K",
+                "156K",
+                "117K",
+                "450 min"
+              ]
+            },
+            {
+              "casltelv": "14-16",
+              "eventcost": [
+                "100",
+                "600K",
+                "2.6M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x65K",
+                "40K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x500",
+                "x1",
+                "x400K",
+                "x400K",
+                "x260K",
+                "x195K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2000",
+                "450K",
+                "x1",
+                "x850K",
+                "250",
+                "250",
+                "160K",
+                "120K",
+                "500 min"
+              ]
+            },
+            {
+              "casltelv": "17-19",
+              "eventcost": [
+                "100K",
+                "700K",
+                "2.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x125K",
+                "75K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x600",
+                "x1",
+                "x550K",
+                "x550K",
+                "x360K",
+                "x270K",
+                "400 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2500",
+                "600K",
+                "x1",
+                "x1.3M",
+                "300K",
+                "300K",
+                "200K",
+                "150K",
+                "800 min"
+              ]
+            },
+            {
+              "casltelv": "20-22",
+              "eventcost": [
+                "100K",
+                "700K",
+                "3.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x150K",
+                "100K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x700",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "750K",
+                "x1",
+                "x2M",
+                "450K",
+                "450K",
+                "300K",
+                "225K",
+                "850 min"
+              ]
+            },
+            {
+              "casltelv": "23-24",
+              "eventcost": [
+                "100K",
+                "800K",
+                "3.8M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x200K",
+                "150K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1000",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3500",
+                "900K",
+                "x1",
+                "x2.75M",
+                "750K",
+                "750K",
+                "500K",
+                "375KK",
+                "1.15K min"
+              ]
+            },
+            {
+              "casltelv": "25",
+              "eventcost": [
+                "200K",
+                "1M",
+                "4M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x275K",
+                "250K",
+                "220 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1500",
+                "x1",
+                "1.2M",
+                "1.2M",
+                "780K",
+                "585K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "1100K",
+                "x1",
+                "3.25M",
+                "750K",
+                "750K",
+                "500K",
+                "375K",
+                "1.15K min"
+              ]
+            }
+          ]
+        },
+        {
+          "eventtitle": "Hero Recruitment/Spend Wisdom Medals",
+          "eventContent": [
+            "Use one Super Recruitment Ticket 200k",
+            "Use one Advanced Recruitment Ticket 50k",
+            "Use 1 Normal Recruitment Ticket 10k",
+            "Spend 1 Wisdom Medal"
+          ],
+          "castlelv": [
+            {
+              "casltelv": "6-8",
+              "eventcost": [
+                "40K",
+                "240K",
+                "1.04M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x20K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x100",
+                "x1",
+                "x50K",
+                "x50K",
+                "x32K",
+                "x24K",
+                "135 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x500",
+                "80K",
+                "x200K",
+                "100K",
+                "100K",
+                "64K",
+                "48K",
+                "195 min"
+              ]
+            },
+            {
+              "casltelv": "9-10",
+              "eventcost": [
+                "60K",
+                "360K",
+                "1.36M"
               ],
               "bluechesttitle": [
                 "Gold",
@@ -11329,9 +13242,9 @@
             {
               "casltelv": "11-13",
               "eventcost": [
-                "60K",
-                "360K",
-                "1.36M"
+                "80K",
+                "480K",
+                "2.48M"
               ],
               "bluechesttitle": [
                 "Gold",
@@ -11376,7 +13289,7 @@
                 "x1500",
                 "200K",
                 "1",
-                "x300K",
+                "x650K",
                 "240K",
                 "240K",
                 "156K",
@@ -11387,16 +13300,18 @@
             {
               "casltelv": "14-16",
               "eventcost": [
-                "60K",
-                "360K",
-                "1.36M"
+                "100K",
+                "600K",
+                "2.6M"
               ],
               "bluechesttitle": [
                 "Gold",
+                "Hero XP",
                 "Training Speed-Up"
               ],
               "bluechestvalue": [
                 "x65K",
+                "40K",
                 "110 min"
               ],
               "purplechesttitle": [
@@ -11432,30 +13347,32 @@
                 "x2000",
                 "450K",
                 "x1",
-                "x550K",
-                "400K",
-                "400K",
-                "260K",
-                "195K",
-                "610 min"
+                "x850K",
+                "250K",
+                "250K",
+                "160K",
+                "120K",
+                "500 min"
               ]
             },
             {
               "casltelv": "17-19",
               "eventcost": [
-                "80K",
-                "480K",
-                "2.48M"
+                "100K",
+                "700K",
+                "2.7M"
               ],
               "bluechesttitle": [
                 "Gems",
                 "Gold",
+                "Hero XP",
                 "Training Speed-Up"
               ],
               "bluechestvalue": [
                 "x100",
                 "x125K",
-                "110 min"
+                "75K",
+                "50 min"
               ],
               "purplechesttitle": [
                 "Gems",
@@ -11488,13 +13405,13 @@
               ],
               "goldchestvalue": [
                 "x2500",
-                "600K",
+                "x600K",
                 "x1",
-                "x750K",
-                "550K",
-                "550K",
-                "360K",
-                "270K",
+                "x1.3K",
+                "300K",
+                "300K",
+                "200K",
+                "150K",
                 "800 min"
               ]
             },
@@ -11503,17 +13420,19 @@
               "eventcost": [
                 "100K",
                 "700K",
-                "2.7M"
+                "3.7M"
               ],
               "bluechesttitle": [
                 "Gems",
                 "Gold",
+                "Hero XP",
                 "Training Speed-Up"
               ],
               "bluechestvalue": [
                 "x100",
                 "x150K",
-                "160 min"
+                "100K",
+                "100 min"
               ],
               "purplechesttitle": [
                 "Gems",
@@ -11548,11 +13467,11 @@
                 "x3000",
                 "750K",
                 "x1",
-                "x1M",
-                "950K",
-                "950K",
-                "620K",
-                "465K",
+                "x2M",
+                "450K",
+                "450K",
+                "300K",
+                "225K",
                 "850 min"
               ]
             },
@@ -11617,6 +13536,428 @@
             {
               "casltelv": "25",
               "eventcost": [
+                "200K",
+                "1M",
+                "4M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x275K",
+                "250K",
+                "100 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1500",
+                "x1",
+                "1.2M",
+                "1.2M",
+                "780K",
+                "585K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "1100K",
+                "x1",
+                "3.25M",
+                "750M",
+                "750M",
+                "500K",
+                "375K",
+                "1.15K min"
+              ]
+            }
+          ]
+        },
+        {
+          "eventtitle": "All Hero Development",
+          "eventContent": [
+            "Exchange and obtain 1 wisdom medal",
+            "Spend 1 Wisdom Medal",
+            "Gaining 10 Hero Exp",
+            "Unlock a skill for any hero 20k",
+            "Use 1 Normal Recruitment Ticket 10k",
+            "Use one Advanced Recruitment Ticket 50k",
+            "Use one Super Recruitment Ticket 200k"
+          ],
+          "castlelv": [
+            {
+              "casltelv": "6-8",
+              "eventcost": [
+                "40K",
+                "240K",
+                "1.04M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x20K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x100",
+                "x1",
+                "x50K",
+                "x50K",
+                "x32K",
+                "x24K",
+                "135 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x500",
+                "80K",
+                "x200K",
+                "100K",
+                "100K",
+                "64K",
+                "48K",
+                "195 min"
+              ]
+            },
+            {
+              "casltelv": "9-10",
+              "eventcost": [
+                "60",
+                "360",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x25K",
+                "x15K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x200",
+                "x1",
+                "x100K",
+                "x100K",
+                "x64K",
+                "x48K",
+                "195 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1000",
+                "150K",
+                "x200K",
+                "150K",
+                "150K",
+                "96K",
+                "72K",
+                "375 min"
+              ]
+            },
+            {
+              "casltelv": "11-13",
+              "eventcost": [
+                "80",
+                "480K",
+                "2.48M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x55K",
+                "x25K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x400",
+                "x1",
+                "x190K",
+                "x190K",
+                "x124K",
+                "x93K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1500",
+                "200K",
+                "1",
+                "x300K",
+                "240K",
+                "240K",
+                "156K",
+                "117K",
+                "450 min"
+              ]
+            },
+            {
+              "casltelv": "14-16",
+              "eventcost": [
+                "100",
+                "600K",
+                "2.6M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x65K",
+                "40K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x500",
+                "x1",
+                "x400K",
+                "x400K",
+                "x260K",
+                "x195K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2000",
+                "450K",
+                "x1",
+                "x850K",
+                "250",
+                "250",
+                "160K",
+                "120K",
+                "500 min"
+              ]
+            },
+            {
+              "casltelv": "17-19",
+              "eventcost": [
+                "100K",
+                "700K",
+                "2.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x125K",
+                "75K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x600",
+                "x1",
+                "x550K",
+                "x550K",
+                "x360K",
+                "x270K",
+                "400 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2500",
+                "600K",
+                "x1",
+                "x1.3M",
+                "300K",
+                "300K",
+                "200K",
+                "150K",
+                "800 min"
+              ]
+            },
+            {
+              "casltelv": "20-22",
+              "eventcost": [
+                "100K",
+                "700K",
+                "3.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x150K",
+                "100K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x700",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "750K",
+                "x1",
+                "x2M",
+                "450K",
+                "450K",
+                "300K",
+                "225K",
+                "850 min"
+              ]
+            },
+            {
+              "casltelv": "23-24",
+              "eventcost": [
                 "100K",
                 "800K",
                 "3.8M"
@@ -11624,11 +13965,73 @@
               "bluechesttitle": [
                 "Gems",
                 "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x200K",
+                "150K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1000",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3500",
+                "900K",
+                "x1",
+                "x2.75M",
+                "750K",
+                "750K",
+                "500K",
+                "375KK",
+                "1.15K min"
+              ]
+            },
+            {
+              "casltelv": "25",
+              "eventcost": [
+                "200K",
+                "1M",
+                "4M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
                 "Training Speed-Up"
               ],
               "bluechestvalue": [
                 "x100",
                 "x275K",
+                "250K",
                 "220 min"
               ],
               "purplechesttitle": [
@@ -11661,6 +14064,489 @@
                 "Training Speed-Up"
               ],
               "goldchestvalue": [
+                "x3000",
+                "1100K",
+                "x1",
+                "3.25M",
+                "750K",
+                "750K",
+                "500K",
+                "375K",
+                "1.15K min"
+              ]
+            }
+          ]
+        },
+        {
+          "eventtitle": "Spend-Acquire Wisdom Medals/Kill Zombies",
+          "eventContent": [
+            "Unlock a skill for any hero",
+            "Exchange and obtain 1 wisdom medal",
+            "Spend 1 Wisdom Medal",
+            "Kill a Lvl 15 Zombie 4.8k",
+            "Kill a Lvl 14 Zombie 4.6k",
+            "Kill a Lvl 13 Zombie 4.4k",
+            "Kill a Lvl 12 Zombie 4.2k",
+            "Kill a Lvl 11 Zombie 4k",
+            "Kill a Lvl 10 Zombie 3.8k",
+            "Kill a Lvl 9 Zombie 3.6k",
+            "Kill a Lvl 8 Zombie 3.4k",
+            "Kill a Lvl 7 Zombie 3.2k",
+            "Kill a Lvl 6 Zombie 3k",
+            "Kill a Lvl 5 Zombie 2.8k",
+            "Kill a Lvl 4 Zombie 2.6k",
+            "Kill a Lvl 3 Zombie 2.4k",
+            "Kill a Lvl 2 Zombie 2.2k",
+            "Kill a Lvl 1 Zombie 2k"
+          ],
+          "castlelv": [
+            {
+              "casltelv": "6-8",
+              "eventcost": [
+                "30K",
+                "230K",
+                "930K"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x20K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x100",
+                "x1",
+                "x50K",
+                "x50K",
+                "x32K",
+                "x24K",
+                "135 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x500",
+                "80K",
+                "x200K",
+                "100K",
+                "100K",
+                "64K",
+                "48K",
+                "195 min"
+              ]
+            },
+            {
+              "casltelv": "9-10",
+              "eventcost": [
+                "40K",
+                "240K",
+                "1.14M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x25K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x200",
+                "x1",
+                "x100K",
+                "x100K",
+                "x64K",
+                "x48K",
+                "195 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1000",
+                "150K",
+                "x200K",
+                "150K",
+                "150K",
+                "96K",
+                "72K",
+                "375 min"
+              ]
+            },
+            {
+              "casltelv": "11-13",
+              "eventcost": [
+                "60K",
+                "360K",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x55K",
+                "x10K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x400",
+                "x1",
+                "x190K",
+                "x190K",
+                "x124K",
+                "x93K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1500",
+                "200K",
+                "1",
+                "x300K",
+                "240K",
+                "240K",
+                "156K",
+                "117K",
+                "450 min"
+              ]
+            },
+            {
+              "casltelv": "14-16",
+              "eventcost": [
+                "60K",
+                "360K",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x65K",
+                "110 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x500",
+                "x1",
+                "x400K",
+                "x400K",
+                "x260K",
+                "x195K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2000",
+                "450K",
+                "x1",
+                "x550K",
+                "400K",
+                "400K",
+                "260K",
+                "195K",
+                "610 min"
+              ]
+            },
+            {
+              "casltelv": "17-19",
+              "eventcost": [
+                "80K",
+                "480K",
+                "2.48M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x125K",
+                "110 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x600",
+                "x1",
+                "x550K",
+                "x550K",
+                "x360K",
+                "x270K",
+                "400 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2500",
+                "600K",
+                "x1",
+                "x750K",
+                "550K",
+                "550K",
+                "360K",
+                "270K",
+                "800 min"
+              ]
+            },
+            {
+              "casltelv": "20-22",
+              "eventcost": [
+                "100K",
+                "700K",
+                "2.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x150K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x700",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "750K",
+                "x1",
+                "x1M",
+                "950K",
+                "950K",
+                "620K",
+                "465K",
+                "850 min"
+              ]
+            },
+            {
+              "casltelv": "23-24",
+              "eventcost": [
+                "Null",
+                "Null",
+                "Null"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x200K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1000",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3500",
+                "900K",
+                "x1",
+                "x1M",
+                "1.25M",
+                "1.25M",
+                "820K",
+                "615K",
+                "1.15K min"
+              ]
+            },
+            {
+              "casltelv": "25",
+              "eventcost": [
+                "100K",
+                "800K",
+                "3.8M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Tech Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x275K",
+                "220 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1500",
+                "x1",
+                "1.2M",
+                "1.2M",
+                "780K",
+                "585K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Tech Speed-Up"
+              ],
+              "goldchestvalue": [
                 "x4000",
                 "1100K",
                 "x1",
@@ -11670,6 +14556,488 @@
                 "980K",
                 "735K",
                 "1.45K min"
+              ]
+            }
+          ]
+        },
+        {
+          "eventtitle": "All Hero Development",
+          "eventContent": [
+            "Exchange and obtain 1 wisdom medal",
+            "Spend 1 Wisdom Medal",
+            "Gaining 10 Hero Exp",
+            "Unlock a skill for any hero 20k",
+            "Use 1 Normal Recruitment Ticket 10k",
+            "Use one Advanced Recruitment Ticket 50k",
+            "Use one Super Recruitment Ticket 200k"
+          ],
+          "castlelv": [
+            {
+              "casltelv": "6-8",
+              "eventcost": [
+                "40K",
+                "240K",
+                "1.04M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x20K",
+                "x10K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x100",
+                "x1",
+                "x50K",
+                "x50K",
+                "x32K",
+                "x24K",
+                "135 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x500",
+                "80K",
+                "x200K",
+                "100K",
+                "100K",
+                "64K",
+                "48K",
+                "195 min"
+              ]
+            },
+            {
+              "casltelv": "9-10",
+              "eventcost": [
+                "60",
+                "360",
+                "1.36M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x25K",
+                "x15K",
+                "25 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x200",
+                "x1",
+                "x100K",
+                "x100K",
+                "x64K",
+                "x48K",
+                "195 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1000",
+                "150K",
+                "x200K",
+                "150K",
+                "150K",
+                "96K",
+                "72K",
+                "375 min"
+              ]
+            },
+            {
+              "casltelv": "11-13",
+              "eventcost": [
+                "80",
+                "480K",
+                "2.48M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x55K",
+                "x25K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x400",
+                "x1",
+                "x190K",
+                "x190K",
+                "x124K",
+                "x93K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x1500",
+                "200K",
+                "1",
+                "x300K",
+                "240K",
+                "240K",
+                "156K",
+                "117K",
+                "450 min"
+              ]
+            },
+            {
+              "casltelv": "14-16",
+              "eventcost": [
+                "100",
+                "600K",
+                "2.6M"
+              ],
+              "bluechesttitle": [
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x65K",
+                "40K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x500",
+                "x1",
+                "x400K",
+                "x400K",
+                "x260K",
+                "x195K",
+                "220 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2000",
+                "450K",
+                "x1",
+                "x850K",
+                "250",
+                "250",
+                "160K",
+                "120K",
+                "500 min"
+              ]
+            },
+            {
+              "casltelv": "17-19",
+              "eventcost": [
+                "100K",
+                "700K",
+                "2.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x125K",
+                "75K",
+                "50 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x600",
+                "x1",
+                "x550K",
+                "x550K",
+                "x360K",
+                "x270K",
+                "400 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x2500",
+                "600K",
+                "x1",
+                "x1.3M",
+                "300K",
+                "300K",
+                "200K",
+                "150K",
+                "800 min"
+              ]
+            },
+            {
+              "casltelv": "20-22",
+              "eventcost": [
+                "100K",
+                "700K",
+                "3.7M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x150K",
+                "100K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x700",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "750K",
+                "x1",
+                "x2M",
+                "450K",
+                "450K",
+                "300K",
+                "225K",
+                "850 min"
+              ]
+            },
+            {
+              "casltelv": "23-24",
+              "eventcost": [
+                "100K",
+                "800K",
+                "3.8M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x200K",
+                "150K",
+                "160 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1000",
+                "x1",
+                "x800K",
+                "x800K",
+                "x520K",
+                "x390K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3500",
+                "900K",
+                "x1",
+                "x2.75M",
+                "750K",
+                "750K",
+                "500K",
+                "375KK",
+                "1.15K min"
+              ]
+            },
+            {
+              "casltelv": "25",
+              "eventcost": [
+                "200K",
+                "1M",
+                "4M"
+              ],
+              "bluechesttitle": [
+                "Gems",
+                "Gold",
+                "Hero XP",
+                "Training Speed-Up"
+              ],
+              "bluechestvalue": [
+                "x100",
+                "x275K",
+                "250K",
+                "220 min"
+              ],
+              "purplechesttitle": [
+                "Gems",
+                "Hero Frag",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "purplechestvalue": [
+                "x1500",
+                "x1",
+                "1.2M",
+                "1.2M",
+                "780K",
+                "585K",
+                "450 min"
+              ],
+              "goldchesttitle": [
+                "Gems",
+                "Gold",
+                "Advanced Teleport",
+                "Hero XP",
+                "Food",
+                "Lumber",
+                "Marble",
+                "Iron",
+                "Training Speed-Up"
+              ],
+              "goldchestvalue": [
+                "x3000",
+                "1100K",
+                "x1",
+                "3.25M",
+                "750K",
+                "750K",
+                "500K",
+                "375K",
+                "1.15K min"
               ]
             }
           ]
@@ -15424,7 +18792,6 @@
             }
           ]
         }
-        
       ]
     },
     {
@@ -19172,477 +22539,6 @@
                 "980K",
                 "735K",
                 "1450 min"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "titleofweekday": "Sunday",
-      "daycontents": [
-        {
-          "eventtitle": "All Speed Up",
-          "eventContent": [
-            "Every 1 min of any speed-up items used 400"
-          ],
-          "castlelv": [
-            {
-              "casltelv": "6-8",
-              "eventcost": [
-                "50K",
-                "350K",
-                "2.55M"
-              ],
-              "bluechesttitle": [
-                "Gold",
-                "Hero XP",
-                "Training Speed-Up"
-              ],
-              "bluechestvalue": [
-                "x20K",
-                "x10K",
-                "25 min"
-              ],
-              "purplechesttitle": [
-                "Gems",
-                "Hero Frag",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "purplechestvalue": [
-                "x100",
-                "x1",
-                "x50K",
-                "x50K",
-                "x32K",
-                "x24K",
-                "135 min"
-              ],
-              "goldchesttitle": [
-                "Gems",
-                "Gold",
-                "Hero XP",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "goldchestvalue": [
-                "x500",
-                "80K",
-                "x200K",
-                "100K",
-                "100K",
-                "64K",
-                "48K",
-                "195 min"
-              ]
-            },
-            {
-              "casltelv": "9-10",
-              "eventcost": [
-                "50K",
-                "450K",
-                "2.95M"
-              ],
-              "bluechesttitle": [
-                "Gold",
-                "Hero XP",
-                "Training Speed-Up"
-              ],
-              "bluechestvalue": [
-                "x25K",
-                "x10K",
-                "25 min"
-              ],
-              "purplechesttitle": [
-                "Gems",
-                "Hero Frag",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "purplechestvalue": [
-                "x200",
-                "x1",
-                "x100K",
-                "x100K",
-                "x64K",
-                "x48K",
-                "195 min"
-              ],
-              "goldchesttitle": [
-                "Gems",
-                "Gold",
-                "Hero XP",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "goldchestvalue": [
-                "x1000",
-                "150K",
-                "x200K",
-                "150K",
-                "150K",
-                "96K",
-                "72K",
-                "375 min"
-              ]
-            },
-            {
-              "casltelv": "11-13",
-              "eventcost": [
-                "70K",
-                "570",
-                "3.47M"
-              ],
-              "bluechesttitle": [
-                "Gold",
-                "Hero XP",
-                "Training Speed-Up"
-              ],
-              "bluechestvalue": [
-                "x55K",
-                "x10K",
-                "50 min"
-              ],
-              "purplechesttitle": [
-                "Gems",
-                "Hero Frag",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "purplechestvalue": [
-                "x400",
-                "x1",
-                "x190K",
-                "x190K",
-                "x124K",
-                "x93K",
-                "220 min"
-              ],
-              "goldchesttitle": [
-                "Gems",
-                "Gold",
-                "Advanced Teleport",
-                "Hero XP",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "goldchestvalue": [
-                "x1500",
-                "200K",
-                "1",
-                "x300K",
-                "240K",
-                "240K",
-                "156K",
-                "117K",
-                "450 min"
-              ]
-            },
-            {
-              "casltelv": "14-16",
-              "eventcost": [
-                "70K",
-                "570K",
-                "3.67M"
-              ],
-              "bluechesttitle": [
-                "Gold",
-                "Training Speed-Up"
-              ],
-              "bluechestvalue": [
-                "x65K",
-                "110 min"
-              ],
-              "purplechesttitle": [
-                "Gems",
-                "Hero Frag",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "purplechestvalue": [
-                "x500",
-                "x1",
-                "x400K",
-                "x400K",
-                "x260K",
-                "x195K",
-                "220 min"
-              ],
-              "goldchesttitle": [
-                "Gems",
-                "Gold",
-                "Advanced Teleport",
-                "Hero XP",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "goldchestvalue": [
-                "x2000",
-                "450K",
-                "x1",
-                "x550K",
-                "400K",
-                "400K",
-                "260K",
-                "195K",
-                "610 min"
-              ]
-            },
-            {
-              "casltelv": "17-19",
-              "eventcost": [
-                "80K",
-                "580K",
-                "3.98M"
-              ],
-              "bluechesttitle": [
-                "Gems",
-                "Gold",
-                "Training Speed-Up"
-              ],
-              "bluechestvalue": [
-                "x100",
-                "x125K",
-                "110 min"
-              ],
-              "purplechesttitle": [
-                "Gems",
-                "Hero Frag",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "purplechestvalue": [
-                "x600",
-                "x1",
-                "x550K",
-                "x550K",
-                "x360K",
-                "x270K",
-                "400 min"
-              ],
-              "goldchesttitle": [
-                "Gems",
-                "Gold",
-                "Advanced Teleport",
-                "Hero XP",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "goldchestvalue": [
-                "x2500",
-                "600K",
-                "x1",
-                "x750K",
-                "550K",
-                "550K",
-                "360K",
-                "270K",
-                "800 min"
-              ]
-            },
-            {
-              "casltelv": "20-22",
-              "eventcost": [
-                "90K",
-                "690K",
-                "4.59M"
-              ],
-              "bluechesttitle": [
-                "Gems",
-                "Gold",
-                "Training Speed-Up"
-              ],
-              "bluechestvalue": [
-                "x100",
-                "x150K",
-                "160 min"
-              ],
-              "purplechesttitle": [
-                "Gems",
-                "Hero Frag",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "purplechestvalue": [
-                "x700",
-                "x1",
-                "x800K",
-                "x800K",
-                "x520K",
-                "x390K",
-                "450 min"
-              ],
-              "goldchesttitle": [
-                "Gems",
-                "Gold",
-                "Advanced Teleport",
-                "Hero XP",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "goldchestvalue": [
-                "x3000",
-                "750K",
-                "x1",
-                "x1M",
-                "950K",
-                "950K",
-                "620K",
-                "465K",
-                "850 min"
-              ]
-            },
-            {
-              "casltelv": "23-24",
-              "eventcost": [
-                "100K",
-                "800K",
-                "5.10M"
-              ],
-              "bluechesttitle": [
-                "Gems",
-                "Gold",
-                "Training Speed-Up"
-              ],
-              "bluechestvalue": [
-                "x100",
-                "x200K",
-                "160 min"
-              ],
-              "purplechesttitle": [
-                "Gems",
-                "Hero Frag",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "purplechestvalue": [
-                "x1000",
-                "x1",
-                "x800K",
-                "x800K",
-                "x520K",
-                "x390K",
-                "450 min"
-              ],
-              "goldchesttitle": [
-                "Gems",
-                "Gold",
-                "Advanced Teleport",
-                "Hero XP",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "goldchestvalue": [
-                "x3500",
-                "900K",
-                "x1",
-                "x1M",
-                "1.25M",
-                "1.25M",
-                "820K",
-                "615K",
-                "1.15K min"
-              ]
-            },
-            {
-              "casltelv": "25",
-              "eventcost": [
-                "100K",
-                "800K",
-                "5.1M"
-              ],
-              "bluechesttitle": [
-                "Gems",
-                "Gold",
-                "Training Speed-Up"
-              ],
-              "bluechestvalue": [
-                "x100",
-                "x275K",
-                "220 min"
-              ],
-              "purplechesttitle": [
-                "Gems",
-                "Hero Frag",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "purplechestvalue": [
-                "x1500",
-                "x1",
-                "1.2M",
-                "1.2M",
-                "780K",
-                "585K",
-                "450 min"
-              ],
-              "goldchesttitle": [
-                "Gems",
-                "Gold",
-                "Advanced Teleport",
-                "Hero XP",
-                "Food",
-                "Lumber",
-                "Marble",
-                "Iron",
-                "Training Speed-Up"
-              ],
-              "goldchestvalue": [
-                "x4000",
-                "1100K",
-                "x1",
-                "1M",
-                "1.5M",
-                "1.5M",
-                "980K",
-                "735K",
-                "1.45K min"
               ]
             }
           ]
