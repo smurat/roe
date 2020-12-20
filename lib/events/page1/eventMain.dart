@@ -11,12 +11,11 @@ class EventMainPage extends StatelessWidget {
       @required ModelEvents eventModel,
       @required List contentList})
       : _timer = timer,
-        _eventModel = eventModel,
-        _contentList = contentList,
+        _eventModel = eventModel,        
         super(key: key);
   final _timer;
   final _eventModel;
-  final _contentList;
+
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class EventMainPage extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: Colors.grey.shade900,
-        appBar: AppBar(
+        appBar: AppBar(backgroundColor: Colors.grey.shade900,
           title: Text('Events'),
         ),
         body: Column(
@@ -36,9 +35,7 @@ class EventMainPage extends StatelessWidget {
             TopSide(
               model: _eventModel,
             ),
-            MiddleSide(
-              contentList: _contentList,
-            ),
+            MiddleSide(controller: Get.find<ControllerDropdownMenu>()),
             BottomSide(),
           ],
         ),
@@ -47,21 +44,4 @@ class EventMainPage extends StatelessWidget {
   }
 }
 
-/*
-  Future<List> _getGameTime() async {
-    try {
-      var tzdb = await DateTimeZoneProviders.tzdb;
-      var noronha = await tzdb['America/Noronha'];
-      var now = Instant.now();
 
-      //print('1-> Noronha ====> ${now.inZone(noronha).clockTime}');
-      //  print('2-> DayOfWeek ${now.inZone(noronha).dayOfWeek}');
-      //  print('2-> Hour ${now.inZone(noronha).hourOfDay}');
-      //  print('2-> LocalTime ${now.inLocalZone()}');
-
-      return [noronha, now];
-    } catch (e) {
-      print('HATA' + e);
-      return [];
-    }
-  }*/

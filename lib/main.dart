@@ -1,10 +1,11 @@
 import 'package:flutter/services.dart';
-import 'package:son_roe/events/page1/controllertime.dart';
+import 'package:son_roe/events/page1/controller/controllertime.dart';
 import 'package:son_roe/locator.dart';
 import 'package:son_roe/parts/t9calculator/utility/services_t9.dart';
 import 'package:son_roe/parts/zoneconflict/controller/controller_zoneconflict.dart';
 import 'package:son_roe/parts/zoneconflict/utility/model_zoneconflict.dart';
 import 'package:time_machine/time_machine.dart';
+import 'package:son_roe/events/page1/widgets/middleSide.dart';
 
 //TODO GATGERING ISINI HALLET
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MenuPage(),
+      //home: TestDosyasi()
     );
   }
 }
@@ -49,12 +51,14 @@ void _initControllers() {
   Get.put(ControllerT9Footman());
   Get.put(ControllerZoneConflict());
   Get.put(ControllerServerTime());
+  //--
+  Get.put(ControllerDropdownMenu());
 }
 
 void _initValues() {
   GetStorage box = getIt<GetStorage>();
 
-  Get.find<ControllerServerTime>().sunday.value = 5;//FIXME Kullanıcıdan Gelen Seçmeli PAZAR
+  Get.find<ControllerServerTime>().sunday.value = 5; //FIXME Kullanıcıdan Gelen Seçmeli PAZAR
 
 
   // Dispatching values of Cavalry

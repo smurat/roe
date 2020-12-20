@@ -1,10 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:son_roe/events/utility/model_events.dart';
-import 'package:son_roe/events/page1/controllertime.dart';
-import 'package:son_roe/parts/t9calculator/utility/services_t9.dart';
-import 'package:time_machine/time_machine.dart';
+import 'package:son_roe/events/utility/services_event.dart';
 
-TextStyle _hourStyle = TextStyle(color: Colors.white, fontSize: 20);
+TextStyle _hourStyle = TextStyle(color: Colors.white, fontSize: 18);
 
 class TopSide extends StatelessWidget {
   const TopSide({
@@ -53,8 +49,8 @@ class TopRightWidget extends StatelessWidget {
           var hr = Get.find<ControllerServerTime>().model.value.hr;
           var day = Get.find<ControllerServerTime>().model.value.day;
 
-          return Text('${_model.weekday[day].daycontents[hr].eventtitle}');
-          //   return Text('${_model.weekday[1].daycontents[1].eventtitle}');
+          return Center(child: Text('${_model.weekday[day].daycontents[hr].eventtitle}',style: _hourStyle));
+          
         }),
       ),
     );
@@ -80,10 +76,12 @@ class BottomRightWidget extends StatelessWidget {
         color: Colors.grey.shade800,
         child: Obx(() {
           var nextEventHr =
-              Get.find<ControllerServerTime>().model.value.nextEventHr; 
-          var day = Get.find<ControllerServerTime>().model.value.day; 
-          return Text(
-              '${_model.weekday[_dateLine(nextEventHr - 1, day)].daycontents[_hourLine(nextEventHr)].eventtitle}');
+              Get.find<ControllerServerTime>().model.value.nextEventHr;
+          var day = Get.find<ControllerServerTime>().model.value.day;
+          return Center(
+            child: Text(
+                '${_model.weekday[_dateLine(nextEventHr - 1, day)].daycontents[_hourLine(nextEventHr)].eventtitle}',style: _hourStyle,),
+          );
         }),
       ),
     );

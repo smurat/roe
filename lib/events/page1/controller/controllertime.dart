@@ -1,13 +1,14 @@
+import 'package:son_roe/events/utility/models/model_chest.dart';
 import 'package:son_roe/events/utility/services_event.dart';
-import 'package:son_roe/parts/t9calculator/utility/services_t9.dart';
-
 import 'package:time_machine/time_machine.dart';
-import 'package:flutter/services.dart' show rootBundle;
 
 class ControllerServerTime extends GetxController {
   final model = ModelServerTime(serverTime: LocalTime(0, 0, 0), day: 0).obs;
-  ModelEvents modelList;
+
   final sunday = 0.obs; //kullanıcının Seçtiği Gün
+  final modelEventContent = ModelEventContentList([]).obs;
+  final listOfChest = ModelChests([]).obs;
+  ModelEvents eventModelJsonData;
 
   updateTime({LocalTime localTime, LocalTime reverseTime, int day}) {
     model.update((val) {
@@ -19,6 +20,16 @@ class ControllerServerTime extends GetxController {
       val.serverTime = localTime;
       val.reverse = reverseTime;
       val.day = _sundayAdjustment(day);
+
+      modelEventContent.update((value) {
+        value.eventList = eventModelJsonData
+            .weekday[val.day].daycontents[val.hr].eventContent;
+      });
+
+      listOfChest.update((value) {
+        value.castleLv =
+            eventModelJsonData.weekday[val.day].daycontents[val.hr].castlelv;
+      });
     });
   }
 
@@ -42,17 +53,13 @@ class ControllerServerTime extends GetxController {
 
   _sundayAdjustment(int day) => day == 6 ? sunday : day;
 
-  _fetchJsonData() async {
-    String jsonData = await rootBundle.loadString('assets/events.json');
-
-    final res = json.decode(jsonData);
-    modelList = ModelEvents.fromMap(res);
-    print('ControllerServerTime: Json oluşturuldu');
-  }
-
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
-    _fetchJsonData();
+
+    RepositoryClass repo = getIt<RepositoryClass>();
+    repo.fetchJsonData().then((value) {
+      eventModelJsonData = value;
+    });
   }
 }

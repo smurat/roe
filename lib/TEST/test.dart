@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class TestDosyasi extends StatefulWidget {
   @override
   _TestDosyasiState createState() => _TestDosyasiState();
@@ -9,9 +10,12 @@ class _TestDosyasiState extends State<TestDosyasi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey,
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () {},
+          onPressed: () {
+            print('Test');
+          },
         ),
         appBar: AppBar(
           title: Text('TEST'),

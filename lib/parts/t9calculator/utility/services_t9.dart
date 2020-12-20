@@ -18,3 +18,4 @@ export '../pages/t9researchpage/widgets/itemContainer.dart';
 export '../pages/t9menupage/widgets/itemContainerMenu.dart';
 
 
+export 'package:son_roe/events/utility/services_event.dart';
