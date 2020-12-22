@@ -19,7 +19,7 @@ class ControllerServerTime extends GetxController {
       val.nextEventHr = _hourAdjustment(localTime.hourOfDay + 1);
       val.serverTime = localTime;
       val.reverse = reverseTime;
-      val.day = _sundayAdjustment(day);
+      
 
       modelEventContent.update((value) {
         value.eventList = eventModelJsonData
@@ -51,7 +51,7 @@ class ControllerServerTime extends GetxController {
                                   ? 7
                                   : hr;
 
-  _sundayAdjustment(int day) => day == 6 ? sunday : day;
+  
 
   @override
   void onInit() async {
