@@ -1,7 +1,6 @@
 import 'package:son_roe/events/utility/services_event.dart';
 import 'package:son_roe/parts/gathering/gather_settings_page.dart';
 import 'package:son_roe/parts/gathering/gathering_page.dart';
-import 'package:son_roe/parts/gathering/main_gather.dart';
 import 'package:time_machine/time_machine.dart';
 
 // ignore: must_be_immutable

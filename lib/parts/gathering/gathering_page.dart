@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:numeral/numeral.dart';
 import 'package:son_roe/events/utility/services_event.dart';
 import 'package:son_roe/parts/gathering/constants_gathering.dart';
 import 'package:son_roe/parts/gathering/gather_settings_page.dart';
@@ -57,8 +58,12 @@ class _MainGatheringPageState extends State<MainGatheringPage>
     });
   }
 
+  double widthTotal;
+  double heightTotal;
   @override
   Widget build(BuildContext context) {
+    widthTotal = MediaQuery.of(context).size.width;
+    heightTotal = MediaQuery.of(context).size.height;
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       backgroundColor: Colors.grey.shade300,
@@ -78,79 +83,147 @@ class _MainGatheringPageState extends State<MainGatheringPage>
         ]),
       ),
       body: TabBarView(controller: _tabController, children: [
-          Center(
-      child: Column(
-            children: [
-      DropdownButton(
-        hint: Text(_boostTitle),
-        items: buildDropdownMenuItem(0),
-        onChanged: (value) {
-          _boostValue = value;
-          print(_boostValue);
-          setState(() {
-            _boostTitle = listOfConstants[0].keys.firstWhere((element) {
-              return listOfConstants[0][element] == value;
-            }, orElse: () => null);
-          });
-        },
-      ),
-      Text('1'),
-      Container(
-        height: 300,
-        child: ListView.builder(
-          itemCount: 5,
-          itemBuilder: (context, index) {
-            return buildLegions(context, index);
-          },
-        ),
-      ),
-      Center(
-          child: RaisedButton(
-              child: Text('Hesapla'),
-              onPressed: () {
-                double base = 1;
-
-                List settingsValue =
-                    getIt<GetStorage>().read('gatheringStepperValues');
-
-                List<double> girilen = textValueList.map((e) {
-                  return double.parse(e);
-                }).toList();
-
-                //RSS MIKTARI * RSS TIPI * (BASE + BOOST + ARASTIRMA)
-                for (var i = 0; i < 5; i++) {
-                  resultList[i] = girilen[i] *
-                      _rssValueList[i] *
-                      (base +
-                          _boostValue +
-                          settingsValue[0] +
-                          settingsValue[1] +
-                          settingsValue[2] +
-                          settingsValue[3]);
-                }
-                _calculateTotal();
-              })),
-//RESULT EKRANI
-      Container(
-        padding: EdgeInsets.all(12),
-        height: 130,
-        width: MediaQuery.of(context).size.width * 0.6,
-        color: Colors.black.withOpacity(0.3),
-        child: Column(
+        Center(
+            child: Column(
           children: [
-            Column(
-              children:
-                  List.generate(5, (index) => buildResultScreen(index)),
+            SizedBox(height: heightTotal * 0.0256),
+            Container(
+                width: double.infinity,
+                child: Stack(
+                  children: [
+                    Center(
+                      child: DropdownButton(
+                        hint: Text(_boostTitle),
+                        items: buildDropdownMenuItem(0),
+                        onChanged: (value) {
+                          _boostValue = value;
+                          print(_boostValue);
+                          setState(() {
+                            _boostTitle =
+                                listOfConstants[0].keys.firstWhere((element) {
+                              return listOfConstants[0][element] == value;
+                            }, orElse: () => null);
+                          });
+                        },
+                      ),
+                    ),
+                    Positioned(
+                        right: 1,
+                        child: IconButton(
+                          color: Colors.grey.shade600,
+                          icon: Icon(Icons.info),
+                          onPressed: () {
+                            List settingsValue = getIt<GetStorage>()
+                                .read('gatheringStepperValues');
+                            List<String> stepperTitles = [
+                              'Expedition Force',
+                              'Arm Expert - I',
+                              'Incentive Gathering',
+                              'Arm Expert - II',
+                            ];
+                            Get.defaultDialog(
+                                title: 'ss',
+                                content: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [Text('Base '), Text('1')],
+                                      ),
+                                      Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: List.generate(
+                                              stepperTitles.length,
+                                              (index) => Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Text(
+                                                          stepperTitles[index]),
+                                                      Text(settingsValue[index]
+                                                          .toString())
+                                                    ],
+                                                  ))),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text('Boost '),
+                                          Text(_boostValue.toString())
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ));
+                          },
+                        ))
+                  ],
+                )),
+
+            Container(
+              height: heightTotal * 0.40,
+              child: ListView.builder(
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return buildLegions(context, index);
+                },
+              ),
             ),
-            Text('TOPLAM : ${_calculateTotal()}')
+            Center(
+                child: RaisedButton(
+                    child: Text('Hesapla'),
+                    onPressed: () {
+                      double base = 1;
+                      List settingsValue =
+                          getIt<GetStorage>().read('gatheringStepperValues');
+
+                      List<double> girilen = textValueList.map((e) {
+                        return double.parse(e);
+                      }).toList();
+
+                      //RSS MIKTARI * RSS TIPI * (BASE + BOOST + ARASTIRMA)
+                      for (var i = 0; i < 5; i++) {
+                        resultList[i] = girilen[i] *
+                            _rssValueList[i] *
+                            (base +
+                                _boostValue +
+                                settingsValue[0] +
+                                settingsValue[1] +
+                                settingsValue[2] +
+                                settingsValue[3]);
+                      }
+                      setState(() {
+                        _calculateTotal();
+                      });
+                    })),
+//RESULT EKRANI
+            Container(
+              padding: EdgeInsets.all(12),
+              height: heightTotal * 0.17,
+              width: MediaQuery.of(context).size.width * 0.7,
+              color: Colors.black.withOpacity(0.3),
+              child: Column(
+                children: [
+                  Column(
+                    children:
+                        List.generate(5, (index) => buildResultScreen(index)),
+                  ),
+                  Text(
+                    'TOPLAM : ${_calculateTotal()}',
+                    style: TextStyle(fontSize: 18),
+                  )
+                ],
+              ),
+            ),
           ],
-        ),
-      ),
-            ],
-          )),
-          //IKINCI SAYFA
-          Center(child: RaisedButton(child: Text('ss'), onPressed: () {}))
-        ]),
+        )),
+        //IKINCI SAYFA
+        Center(child: RaisedButton(child: Text('ss'), onPressed: () {}))
+      ]),
     );
   }
 
@@ -159,9 +232,8 @@ class _MainGatheringPageState extends State<MainGatheringPage>
     resultList.forEach((element) {
       toplam += element;
     });
-   
-    return toplam.toString();
-    print(toplam);
+
+    return Numeral(toplam.truncate()).value();
   }
 
   Row buildResultScreen(int index) {
@@ -173,7 +245,7 @@ class _MainGatheringPageState extends State<MainGatheringPage>
           style: TextStyle(color: Colors.white),
         ),
         Text(
-          '${resultList[index]??0}',
+          '${Numeral((resultList[index] ?? 0).truncate()).value()}',
           style: TextStyle(color: Colors.white),
         ),
       ],
@@ -211,8 +283,8 @@ class _MainGatheringPageState extends State<MainGatheringPage>
             },
           ),
           Container(
-            height: 60,
-            width: 140,
+            height: heightTotal * 0.075,
+            width: widthTotal * 0.36,
             padding: EdgeInsets.all(8),
             child: TextFormField(
               style: TextStyle(fontSize: 14),
@@ -263,17 +335,3 @@ class _MainGatheringPageState extends State<MainGatheringPage>
     return liste;
   }
 }
-
-/***
- * 
- * 
- * 
- * result = girilen[0] *
-                          _rssValueList[0] *
-                          (base +
-                              _boostValue +
-                              settingsValue[0] +
-                              settingsValue[1] +
-                              settingsValue[2] +
-                              settingsValue[3]);
- */

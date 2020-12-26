@@ -45,7 +45,7 @@ class _SettingsPageOfGatheringState extends State<SettingsPageOfGathering> {
   void initState() {
     super.initState();
     box = getIt<GetStorage>();
-    print(isSettingsDone); //TODO sil
+
     if (box.read('gatheringStepperTitles') != null) {
       stepperTitles = List<String>.from(box.read('gatheringStepperTitles'));
     }
