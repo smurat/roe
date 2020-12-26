@@ -3,12 +3,18 @@ import 'package:son_roe/events/utility/services_event.dart';
 import 'package:time_machine/time_machine.dart';
 
 class ControllerServerTime extends GetxController {
+  ModelEvents eventModelJsonData;
+
   final model = ModelServerTime(serverTime: LocalTime(0, 0, 0), day: 0).obs;
 
-  final sunday = 0.obs; //kullanıcının Seçtiği Gün
   final modelEventContent = ModelEventContentList([]).obs;
   final listOfChest = ModelChests([]).obs;
-  ModelEvents eventModelJsonData;
+
+  //Default sunday event is Killing event
+  //Sunday event:
+  var sundayEventPicked = 5.obs; 
+  
+  int realDay;
 
   updateTime({LocalTime localTime, LocalTime reverseTime, int day}) {
     model.update((val) {
@@ -19,7 +25,8 @@ class ControllerServerTime extends GetxController {
       val.nextEventHr = _hourAdjustment(localTime.hourOfDay + 1);
       val.serverTime = localTime;
       val.reverse = reverseTime;
-      
+      realDay = day;
+      val.day = _sunday(day); // Gün 6 geldi Model Güncellendi.
 
       modelEventContent.update((value) {
         value.eventList = eventModelJsonData
@@ -32,6 +39,13 @@ class ControllerServerTime extends GetxController {
       });
     });
   }
+
+  updateSundayViaDropdown(int sundayIndex) {
+    sundayEventPicked.value = sundayIndex;
+    print('updateSundayViaDropdown');
+  }
+
+  int _sunday(int day) => (day == 6) ? sundayEventPicked.value : day;
 
   int _hourAdjustment(int hr) => hr == 8 || hr == 16
       ? 0
@@ -50,8 +64,6 @@ class ControllerServerTime extends GetxController {
                               : (hr == 15 || hr == 23)
                                   ? 7
                                   : hr;
-
-  
 
   @override
   void onInit() async {

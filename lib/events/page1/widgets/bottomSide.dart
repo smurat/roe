@@ -97,7 +97,7 @@ class _BottomSideState extends State<BottomSide> {
             itemCount: controller
                 .listOfChest
                 .value
-                .castleLv[controllerDD.castleLevelIndex]
+                .castleLv[controllerDD.castleLevelIndex.value]
                 .bluechesttitle
                 .length,
             itemBuilder: (BuildContext context, int index) {
@@ -113,7 +113,7 @@ class _BottomSideState extends State<BottomSide> {
                         controller
                             .listOfChest
                             .value
-                            .castleLv[controllerDD.castleLevelIndex]
+                            .castleLv[controllerDD.castleLevelIndex.value]
                             .bluechesttitle[index],
                         style: _styleWhite,
                       ),
@@ -121,7 +121,7 @@ class _BottomSideState extends State<BottomSide> {
                         controller
                             .listOfChest
                             .value
-                            .castleLv[controllerDD.castleLevelIndex]
+                            .castleLv[controllerDD.castleLevelIndex.value]
                             .bluechestvalue[index],
                         style: _styleWhite,
                       )
@@ -141,7 +141,7 @@ class _BottomSideState extends State<BottomSide> {
             itemCount: controller
                 .listOfChest
                 .value
-                .castleLv[controllerDD.castleLevelIndex]
+                .castleLv[controllerDD.castleLevelIndex.value]
                 .purplechesttitle
                 .length, 
             itemBuilder: (BuildContext context, int index) {
@@ -157,7 +157,7 @@ class _BottomSideState extends State<BottomSide> {
                         controller
                             .listOfChest
                             .value
-                            .castleLv[controllerDD.castleLevelIndex]
+                            .castleLv[controllerDD.castleLevelIndex.value]
                             .purplechesttitle[index],
                         style: _styleWhite,
                       ),
@@ -165,7 +165,7 @@ class _BottomSideState extends State<BottomSide> {
                         controller
                             .listOfChest
                             .value
-                            .castleLv[controllerDD.castleLevelIndex]
+                            .castleLv[controllerDD.castleLevelIndex.value]
                             .purplechestvalue[index],
                         style: _styleWhite,
                       )
@@ -185,7 +185,7 @@ class _BottomSideState extends State<BottomSide> {
             itemCount: controller
                 .listOfChest
                 .value
-                .castleLv[controllerDD.castleLevelIndex]
+                .castleLv[controllerDD.castleLevelIndex.value]
                 .goldchesttitle
                 .length, 
             itemBuilder: (BuildContext context, int index) {
@@ -201,7 +201,7 @@ class _BottomSideState extends State<BottomSide> {
                         controller
                             .listOfChest
                             .value
-                            .castleLv[controllerDD.castleLevelIndex]
+                            .castleLv[controllerDD.castleLevelIndex.value]
                             .goldchesttitle[index],
                         style: _styleWhite,
                       ),
@@ -209,7 +209,7 @@ class _BottomSideState extends State<BottomSide> {
                         controller
                             .listOfChest
                             .value
-                            .castleLv[controllerDD.castleLevelIndex]
+                            .castleLv[controllerDD.castleLevelIndex.value]
                             .goldchestvalue[index],
                         style: _styleWhite,
                       ),

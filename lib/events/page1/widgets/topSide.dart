@@ -49,8 +49,9 @@ class TopRightWidget extends StatelessWidget {
           var hr = Get.find<ControllerServerTime>().model.value.hr;
           var day = Get.find<ControllerServerTime>().model.value.day;
 
-          return Center(child: Text('${_model.weekday[day].daycontents[hr].eventtitle}',style: _hourStyle));
-          
+          return Center(
+              child: Text('${_model.weekday[day].daycontents[hr].eventtitle}',
+                  style: _hourStyle));
         }),
       ),
     );
@@ -78,18 +79,28 @@ class BottomRightWidget extends StatelessWidget {
           var nextEventHr =
               Get.find<ControllerServerTime>().model.value.nextEventHr;
           var day = Get.find<ControllerServerTime>().model.value.day;
-          return Center(
-            child: Text(
-                '${_model.weekday[_dateLine(nextEventHr - 1, day)].daycontents[_hourLine(nextEventHr)].eventtitle}',style: _hourStyle,),
-          );
+          String _nextEventTitle = _model.weekday[_dateLine(nextEventHr - 1, day)].daycontents[_hourLine(nextEventHr)].eventtitle;
+          return Center(child: Text(_nextEventTitle, style: _hourStyle));
         }),
       ),
     );
   }
 
   int _hourLine(int hour) => hour == 24 ? 0 : hour;
-  int _dateLine(int hour, int day) =>
-      hour == 23 ? (day == 6 ? 0 : day + 1) : day;
+
+  //FIXME PAZAR ve CUMARTESİ günlerini check eder
+  int _dateLine(int hour, int day) {
+    if (Get.find<ControllerServerTime>().realDay == 6 && hour == 23) {
+      //PAZARDAN PAZARTESİYE GEÇİŞ
+      return 0;
+    } else {     
+      return hour == 23
+          ? (day == 5
+              ? Get.find<ControllerDropdownMenu>().sundayEventIndex.value
+              : day + 1)
+          : day;
+    }
+  }
 }
 
 class TopLeftWidget extends StatelessWidget {
@@ -105,13 +116,41 @@ class TopLeftWidget extends StatelessWidget {
         width: MediaQuery.of(context).size.width * 0.31,
         height: MediaQuery.of(context).size.height * 0.08,
         color: Colors.grey.shade800,
-        child: Obx(() => Center(
-                child: Text(
-              '${Get.find<ControllerServerTime>().model.value.serverTime}',
-              style: _hourStyle,
-            ))),
+        child: Obx(() {
+          // String _daY = _day(Get.find<ControllerServerTime>().model.value.day);
+          String _daY = _day(Get.find<ControllerServerTime>().realDay);
+          String _serverTime = Get.find<ControllerServerTime>()
+              .model
+              .value
+              .serverTime
+              .toString();
+          return Center(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Text(_daY, style: _hourStyle),
+              Text(_serverTime, style: _hourStyle)
+            ],
+          ));
+        }),
       ),
     );
+  }
+
+  String _day(int day) {
+    return day == 0
+        ? 'Monday'
+        : (day == 1
+            ? 'Tuesday'
+            : (day == 2
+                ? 'Wednesday'
+                : (day == 3
+                    ? 'Thursday'
+                    : (day == 4
+                        ? 'Friday'
+                        : (day == 5
+                            ? 'Saturday'
+                            : (day == 6 ? 'Sunday' : 'null'))))));
   }
 }
 
@@ -138,7 +177,7 @@ class BottomLeftWidget extends StatelessWidget {
     );
   }
 
-  String _time() {
+  String _time() {   
     try {
       var reverseT = Get.find<ControllerServerTime>().model.value.reverse;
       String mm = reverseT.minuteOfHour.toString();

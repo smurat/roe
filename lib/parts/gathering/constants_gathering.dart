@@ -1,8 +1,6 @@
-
 class ConstantOfGathering {
   static final Map<String, double> typeFactorMap = {
-    'Food': 2,
-    'Lumber': 2,
+    'Food-Lumber': 2,    
     'Marble': 3,
     'Iron': 4,
     'GEM': 4000,

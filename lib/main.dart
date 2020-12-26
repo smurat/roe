@@ -6,7 +6,6 @@ import 'package:son_roe/parts/zoneconflict/controller/controller_zoneconflict.da
 import 'package:son_roe/parts/zoneconflict/utility/model_zoneconflict.dart';
 import 'package:time_machine/time_machine.dart';
 
-
 void main() async {
   setupLocator(); // Initialize SingletonTypeOfInstance
   await GetStorage.init(); // Initialize GetStorage
@@ -50,14 +49,10 @@ void _initControllers() {
   Get.put(ControllerZoneConflict());
   Get.put(ControllerServerTime());
   Get.put(ControllerDropdownMenu());
-
 }
 
 void _initValues() {
   GetStorage box = getIt<GetStorage>();
-
-  Get.find<ControllerServerTime>().sunday.value =
-      5; //FIXME Kullanıcıdan Gelen Seçmeli PAZAR
 
   // Dispatching values of Cavalry
   if (box.read('Cavalry') != null) {
@@ -97,4 +92,19 @@ void _initValues() {
     model.totalLeft = box.read('Zone Conflict')[2];
     model.percentage = box.read('Zone Conflict')[3];
   }
+
+  var controller = Get.find<ControllerDropdownMenu>();
+  if (box.read('castleLevel') != null) {
+    controller.castleLevelIndex.value = box.read('castleLevel');
+    controller.castleLevelTitle.value =
+        controller.getCastleLevelTitle(box.read('castleLevel'));
+  }
+  print(0);
+  if (box.read('sundayEvent') != null) {
+  
+    controller.sundayEventIndex.value = box.read('sundayEvent');
+    controller.sundayEventTitle.value =
+        controller.getSundayEventTitle(box.read('sundayEvent'));
+  
+  } 
 }

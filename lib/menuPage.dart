@@ -1,4 +1,6 @@
 import 'package:son_roe/events/utility/services_event.dart';
+import 'package:son_roe/parts/gathering/gather_settings_page.dart';
+import 'package:son_roe/parts/gathering/gathering_page.dart';
 import 'package:son_roe/parts/gathering/main_gather.dart';
 import 'package:time_machine/time_machine.dart';
 
@@ -15,12 +17,16 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xFF222222),
-      child: SafeArea(
-        child: Scaffold(
-            backgroundColor: Colors.transparent,
-            body: Center(
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Container(
+            decoration: BoxDecoration(
+                color: Color(0xFF222222),
+                image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage('assets/images/iceandfire.jpg'))),
+            child: Center(
               child: Column(
                 children: [
                   Container(
@@ -46,11 +52,12 @@ class MenuPage extends StatelessWidget {
                       buttonTitle: 'Zone Conflict'),
                   CustomMenuButton(
                       onPressed: () {
-                        Get.to(GatheringMainPage());
+                        // Get.to(GatheringMainPage());
 
-                        //---------TEST AREA ---------//
-
-                        //---------TEST AREA ---------//
+                        getIt<GetStorage>().read('isSettingsDone') ==
+                                null
+                            ? Get.to(SettingsPageOfGathering())
+                            : Get.to(MainGatheringPage());
                       },
                       buttonTitle: 'Gather'),
                   CustomMenuButton(
@@ -78,8 +85,8 @@ class MenuPage extends StatelessWidget {
                       buttonTitle: 'Events'),
                 ],
               ),
-            )),
-      ),
+            ),
+          )),
     );
   }
 
@@ -95,7 +102,7 @@ class MenuPage extends StatelessWidget {
       day = _zonedDateTime.dayOfWeek.value - 1;
 
       _controller.updateTime(
-          // Modeli güncelle
+          // Modelin güncellendiği yer
           localTime: _currentTime,
           reverseTime: _reverseTime,
           day: day);

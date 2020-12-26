@@ -1,3 +1,4 @@
+import 'package:son_roe/events/utility/constants_event.dart';
 import 'package:son_roe/events/utility/services_event.dart';
 
 class MiddleSide extends StatelessWidget {
@@ -24,32 +25,44 @@ class MiddleSide extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         ),
                         DropdownButton(
-                            hint: Text('${controller.selectedItem}',
+                            hint: Text('${controller.castleLevelTitle}',
                                 style: TextStyle(color: Colors.white)),
-                            items: _getDropdownMenuItems(),
+                            items: _getDropdownMenuItemsCastleLv(),
                             onChanged: (value) {
-                              controller.updateSelectedItem(value);
+                              controller.updateCastleLevel(value);
+
+                              //save castle level to stroge
+                              getIt<GetStorage>().write('castleLevel', value);
+                            }),
+                        DropdownButton(
+                            hint: Text('${controller.sundayEventTitle}',
+                                style: TextStyle(color: Colors.white)),
+                            items: _getDropdownMenuItemsSundayEvent(),
+                            onChanged: (value) {
+                              controller.updateEvent(value);
+                              Get.find<ControllerServerTime>()
+                                  .updateSundayViaDropdown(value);
+                              
+                              //save Sunday Event to stroge
+                              getIt<GetStorage>().write('sundayEvent', value);
                             })
                       ]))))
         ]));
   }
 
-  List<DropdownMenuItem> _getDropdownMenuItems() {
-    List<String> lvList = [
-      '6-8',
-      '9-10',
-      '11-13',
-      '14-16',
-      '17-19',
-      '20-22',
-      '23-24',
-      '25',
-    ];
-    return lvList
-        .map((element) => DropdownMenuItem(
-              child: Text('$element'),
-              value: element,
-            ))
-        .toList();
+  List<DropdownMenuItem> _getDropdownMenuItemsCastleLv() {
+    List<DropdownMenuItem> liste = List();
+    getIt<ConstantOfEvents>().castleLv.forEach((key, value) {
+      liste.add(DropdownMenuItem(child: Text(key), value: value));
+    });
+    return liste;
+  }
+
+  List<DropdownMenuItem> _getDropdownMenuItemsSundayEvent() {
+    List<DropdownMenuItem> liste = List();
+    getIt<ConstantOfEvents>().eventTitles.forEach((key, value) {
+      liste.add(DropdownMenuItem(child: Text(key), value: value));
+    });
+    return liste;
   }
 }
