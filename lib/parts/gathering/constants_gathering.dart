@@ -1,6 +1,6 @@
 class ConstantOfGathering {
   static final Map<String, double> typeFactorMap = {
-    'Food-Lumber': 2,    
+    'Food-Lumber': 2,
     'Marble': 3,
     'Iron': 4,
     'GEM': 4000,
@@ -76,5 +76,14 @@ class ConstantOfGathering {
     'No Boost': 0,
     '%50 Boost': 0.5,
     '%100 Boost': 1
+  };
+  static final Map<String, double> equipment = {
+    'No-Equipment': 0.0,
+    'Grey': 0.01,
+    'Green': 0.02,
+    'Blue': 0.03,
+    'Purple': 0.06,
+    'Orange': 0.1,
+    'Gold': 0.25
   };
 }

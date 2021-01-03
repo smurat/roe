@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:son_roe/events/page1/controller/controllertime.dart';
 import 'package:son_roe/locator.dart';
+import 'package:son_roe/parts/eden/eden.dart';
 import 'package:son_roe/parts/t9calculator/utility/services_t9.dart';
 import 'package:son_roe/parts/zoneconflict/controller/controller_zoneconflict.dart';
 import 'package:son_roe/parts/zoneconflict/utility/model_zoneconflict.dart';
@@ -49,10 +50,14 @@ void _initControllers() {
   Get.put(ControllerZoneConflict());
   Get.put(ControllerServerTime());
   Get.put(ControllerDropdownMenu());
+  Get.put(ControllerEDEN());
+
+
 }
 
-void _initValues() {
+void _initValues() async {
   GetStorage box = getIt<GetStorage>();
+  RepositoryClass repo = getIt<RepositoryClass>();
 
   // Dispatching values of Cavalry
   if (box.read('Cavalry') != null) {
@@ -99,12 +104,10 @@ void _initValues() {
     controller.castleLevelTitle.value =
         controller.getCastleLevelTitle(box.read('castleLevel'));
   }
-  print(0);
+
   if (box.read('sundayEvent') != null) {
-  
     controller.sundayEventIndex.value = box.read('sundayEvent');
     controller.sundayEventTitle.value =
         controller.getSundayEventTitle(box.read('sundayEvent'));
-  
-  } 
+  }  
 }

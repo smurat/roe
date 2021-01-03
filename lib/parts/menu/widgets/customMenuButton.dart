@@ -21,8 +21,8 @@ class CustomMenuButton extends StatelessWidget {
             style: TextStyle(color: Colors.white70, fontSize: 18),
           )
         ],
-        width: size.width * 0.70,
-        height: size.height * 0.20,
+        width: size.width * 0.60,
+        height: size.height * 0.15,
         paddingTop: 0,
         pressedImage: Image.asset(
           "assets/images/buttonStock2.png",
@@ -33,3 +33,7 @@ class CustomMenuButton extends StatelessWidget {
     );
   }
 }
+/**
+ *  width: size.width * 0.70,
+        height: size.height * 0.20,
+ */

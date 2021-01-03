@@ -15,24 +15,32 @@ class SettingsPageOfGathering extends StatefulWidget {
 class _SettingsPageOfGatheringState extends State<SettingsPageOfGathering> {
   int _activeStep = 0;
   List<Map<String, double>> listOfConstants = [
-    ConstantOfGathering.expeditionForceMap, //0
-    ConstantOfGathering.armExpertIMap, //1
-    ConstantOfGathering.incentiveGatheringMap, //2
-    ConstantOfGathering.armExpertIIMap, //3
+    ConstantOfGathering.expeditionForceMap, //Index:0
+    ConstantOfGathering.armExpertIMap, //Index:1
+    ConstantOfGathering.incentiveGatheringMap, //Index:2
+    ConstantOfGathering.armExpertIIMap, //Index:3
+    ConstantOfGathering.equipment, //Index:4
+    ConstantOfGathering.equipment //Index:4
   ];
   List<String> stepperTitles = [
     'Expedition Force',
     'Arm Expert - I',
     'Incentive Gathering',
     'Arm Expert - II',
+    'Equipments - I',
+    'Equipments - II '
   ];
   List<String> stepperSubtitle = [
     'Expedition Force Araştırması\'nı Giriniz',
     'Arm Expert I Araştırması\'nı Giriniz',
     'Incentive Gathering Araştırması\'nı Giriniz',
     'Arm Expert - II Araştırması\'nı Giriniz',
+    'Scavenger\'s Amulate',
+    'Scavenger\'s Lantern'
   ];
   List<double> values = [
+    0,
+    0,
     0,
     0,
     0,
@@ -84,7 +92,7 @@ class _SettingsPageOfGatheringState extends State<SettingsPageOfGathering> {
                           _activeStep++;
                         });
                       }
-                      if (val == 3) {
+                      if (val == 5) {
                         //SON ADIM
                         box.write('gatheringStepperValues', values);
 
@@ -103,7 +111,14 @@ class _SettingsPageOfGatheringState extends State<SettingsPageOfGathering> {
                         });
                       }
                     },
-                    steps: List.generate(4, (index) => buildStep(index)))
+                    steps: List.generate(6, (index) => buildStep(index))),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Not : Girilen ekipmanlar Tüm legionlar için aynı kabul edilerek hesap yapılacaktır.',
+                    style: TextStyle(color: Colors.grey, fontSize: 11),
+                  ),
+                ),
               ],
             ),
           ),

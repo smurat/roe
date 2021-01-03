@@ -1,6 +1,6 @@
 import 'package:son_roe/events/utility/services_event.dart';
 
-TextStyle _hourStyle = TextStyle(color: Colors.white, fontSize: 18);
+
 
 class TopSide extends StatelessWidget {
   const TopSide({
@@ -13,7 +13,7 @@ class TopSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * 0.19,
+      height: MediaQuery.of(context).size.height * 0.21,      
       child: Column(
         children: [
           Row(
@@ -42,7 +42,7 @@ class TopRightWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 10, 8, 0),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.61,
+        width: MediaQuery.of(context).size.width * 0.58,
         height: MediaQuery.of(context).size.height * 0.08,
         color: Colors.grey.shade800,
         child: Obx(() {
@@ -50,8 +50,11 @@ class TopRightWidget extends StatelessWidget {
           var day = Get.find<ControllerServerTime>().model.value.day;
 
           return Center(
-              child: Text('${_model.weekday[day].daycontents[hr].eventtitle}',
-                  style: _hourStyle));
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('${_model.weekday[day].daycontents[hr].eventtitle}',
+                    style: TextStyle(fontSize: 12,color: Colors.white)),
+              ));
         }),
       ),
     );
@@ -72,7 +75,7 @@ class BottomRightWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 10, 8, 0),
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.61,
+        width: MediaQuery.of(context).size.width * 0.58,
         height: MediaQuery.of(context).size.height * 0.08,
         color: Colors.grey.shade800,
         child: Obx(() {
@@ -80,7 +83,10 @@ class BottomRightWidget extends StatelessWidget {
               Get.find<ControllerServerTime>().model.value.nextEventHr;
           var day = Get.find<ControllerServerTime>().model.value.day;
           String _nextEventTitle = _model.weekday[_dateLine(nextEventHr - 1, day)].daycontents[_hourLine(nextEventHr)].eventtitle;
-          return Center(child: Text(_nextEventTitle, style: _hourStyle));
+          return Center(child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(_nextEventTitle, style: TextStyle(fontSize: 12,color: Colors.white)),
+          ));
         }),
       ),
     );
@@ -128,8 +134,8 @@ class TopLeftWidget extends StatelessWidget {
               child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(_daY, style: _hourStyle),
-              Text(_serverTime, style: _hourStyle)
+              Text(_daY, style: TextStyle(fontSize: 12,color: Colors.white)),
+              Text(_serverTime, style: TextStyle(fontSize: 12,color: Colors.white))
             ],
           ));
         }),
@@ -170,7 +176,7 @@ class BottomLeftWidget extends StatelessWidget {
         child: Obx(() {
           // var reverseTime = reverse;
           return Center(
-            child: Text(_time(), style: _hourStyle),
+            child: Text(_time(), style: TextStyle(fontSize: 12,color: Colors.white)),
           );
         }),
       ),

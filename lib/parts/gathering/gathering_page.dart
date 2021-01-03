@@ -13,14 +13,20 @@ class MainGatheringPage extends StatefulWidget {
 class _MainGatheringPageState extends State<MainGatheringPage>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
+
+  //Sabit değerlerin içinde barındıran liste
   List<Map<String, double>> listOfConstants = [
     ConstantOfGathering.boostMap, //0
     ConstantOfGathering.typeFactorMap, //1
   ];
 
+  //COP boost görüntüsü
   String _boostTitle = 'Boost';
+
+  //COP boost basıldıysa eklenecek olan çarpan değeri
   double _boostValue = 0;
 
+  //Herbir Legion satırındaki input girdilerini tek tek kontrol eden controller lar
   List<TextEditingController> controllersList = [
     TextEditingController(),
     TextEditingController(),
@@ -28,6 +34,7 @@ class _MainGatheringPageState extends State<MainGatheringPage>
     TextEditingController(),
     TextEditingController()
   ];
+  //Herbir Legion satırındaki DROPDOWN menu String ifadeleri
   List<String> _rssTitleList = [
     'Resource',
     'Resource',
@@ -35,7 +42,16 @@ class _MainGatheringPageState extends State<MainGatheringPage>
     'Resource',
     'Resource',
   ];
+  String _rssTitle2 = 'Resource';
+  double _rssValue2 = 0;
+  var _controller2 = TextEditingController();
+  String _textValue2 = '0';
+  String _totalRss2 = '0';
+
+  //Herbir Legion'un seçtiği Kaynak tipi değerleri
   List<double> _rssValueList = [0, 0, 0, 0, 0];
+
+  //Herbir Legion'un aktif mi olacakğını belirleyen değerler
   List<bool> checkBoxList = [
     true,
     true,
@@ -43,7 +59,11 @@ class _MainGatheringPageState extends State<MainGatheringPage>
     true,
     false,
   ];
+
+  //Herbir Legion satırındaki INPUT değerleri
   List<String> textValueList = ['0', '0', '0', '0', '0'];
+
+  //Herbir Legion'un Kendine ait olan COP puanı
   List<double> resultList = [0, 0, 0, 0, 0];
 
   @override
@@ -51,15 +71,16 @@ class _MainGatheringPageState extends State<MainGatheringPage>
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
 
-    // getIt<GetStorage>().read('gatheringStepperValues');
-    print('INIT');
+    //Herbir legion satırında bulunan input değerleri default olarak 0 atanır
     controllersList.forEach((element) {
       element.text = '0';
     });
+    _controller2.text = '0';
   }
 
   double widthTotal;
   double heightTotal;
+
   @override
   Widget build(BuildContext context) {
     widthTotal = MediaQuery.of(context).size.width;
@@ -82,149 +103,313 @@ class _MainGatheringPageState extends State<MainGatheringPage>
           Tab(child: Text('Gather - II'))
         ]),
       ),
+
+//BODY Başlangıç yeri
       body: TabBarView(controller: _tabController, children: [
         Center(
-            child: Column(
-          children: [
-            SizedBox(height: heightTotal * 0.0256),
-            Container(
-                width: double.infinity,
-                child: Stack(
-                  children: [
-                    Center(
-                      child: DropdownButton(
-                        hint: Text(_boostTitle),
-                        items: buildDropdownMenuItem(0),
-                        onChanged: (value) {
-                          _boostValue = value;
-                          print(_boostValue);
-                          setState(() {
-                            _boostTitle =
-                                listOfConstants[0].keys.firstWhere((element) {
-                              return listOfConstants[0][element] == value;
-                            }, orElse: () => null);
-                          });
-                        },
-                      ),
-                    ),
-                    Positioned(
-                        right: 1,
-                        child: IconButton(
-                          color: Colors.grey.shade600,
-                          icon: Icon(Icons.info),
-                          onPressed: () {
-                            List settingsValue = getIt<GetStorage>()
-                                .read('gatheringStepperValues');
-                            List<String> stepperTitles = [
-                              'Expedition Force',
-                              'Arm Expert - I',
-                              'Incentive Gathering',
-                              'Arm Expert - II',
-                            ];
-                            Get.defaultDialog(
-                                title: 'ss',
-                                content: Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [Text('Base '), Text('1')],
-                                      ),
-                                      Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: List.generate(
-                                              stepperTitles.length,
-                                              (index) => Row(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Text(
-                                                          stepperTitles[index]),
-                                                      Text(settingsValue[index]
-                                                          .toString())
-                                                    ],
-                                                  ))),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Text('Boost '),
-                                          Text(_boostValue.toString())
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ));
+            child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: heightTotal * 0.01),
+
+//->> ILK SAYFA
+              Container(
+                  width: double.infinity,
+                  child: Stack(
+                    children: [
+//BOOST SEKMESI
+                      Center(
+                        child: DropdownButton(
+                          hint: Text(_boostTitle),
+                          items: buildDropdownMenuItem(0),
+                          onChanged: (value) {
+                            _boostValue = value;
+                            print(_boostValue);
+                            setState(() {
+                              _boostTitle =
+                                  listOfConstants[0].keys.firstWhere((element) {
+                                return listOfConstants[0][element] == value;
+                              }, orElse: () => null);
+                            });
                           },
-                        ))
-                  ],
-                )),
+                        ),
+                      ),
 
-            Container(
-              height: heightTotal * 0.40,
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return buildLegions(context, index);
-                },
+//INFO Butonu
+                      Positioned(
+                          right: 1,
+                          child: IconButton(
+                            color: Colors.grey.shade600,
+                            icon: Icon(Icons.info),
+                            onPressed: () {
+                              List settingsValue = getIt<GetStorage>()
+                                  .read('gatheringStepperValues');
+                              List<String> stepperTitles = [
+                                'Expedition Force',
+                                'Arm Expert - I',
+                                'Incentive Gathering',
+                                'Arm Expert - II',
+                                'Equipment - I',
+                                'Equipment - II'
+                              ];
+                              Get.defaultDialog(
+                                  title: 'info',
+                                  content: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [Text('Base '), Text('1')],
+                                        ),
+                                        Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: List.generate(
+                                                stepperTitles.length,
+                                                (index) => Row(
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceBetween,
+                                                      children: [
+                                                        Text(stepperTitles[
+                                                            index]),
+                                                        Text(
+                                                            settingsValue[index]
+                                                                .toString())
+                                                      ],
+                                                    ))),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('Boost '),
+                                            Text(_boostValue.toString())
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ));
+                            },
+                          ))
+                    ],
+                  )),
+
+//LEGION CONTAINER
+              Container(
+                height: heightTotal * 0.40,
+                child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return buildLegions(context, index);
+                  },
+                ),
               ),
-            ),
-            Center(
-                child: RaisedButton(
-                    child: Text('Hesapla'),
-                    onPressed: () {
-                      double base = 1;
-                      List settingsValue =
-                          getIt<GetStorage>().read('gatheringStepperValues');
 
-                      List<double> girilen = textValueList.map((e) {
-                        return double.parse(e);
-                      }).toList();
+//HESAPLAMA İŞLEMİ
+              Center(
+                  child: RaisedButton(
+                      child: Text('Hesapla'),
+                      onPressed: () {
+                        List settingsValue =
+                            getIt<GetStorage>().read('gatheringStepperValues');
 
-                      //RSS MIKTARI * RSS TIPI * (BASE + BOOST + ARASTIRMA)
-                      for (var i = 0; i < 5; i++) {
-                        resultList[i] = girilen[i] *
-                            _rssValueList[i] *
-                            (base +
-                                _boostValue +
-                                settingsValue[0] +
-                                settingsValue[1] +
-                                settingsValue[2] +
-                                settingsValue[3]);
-                      }
-                      setState(() {
-                        _calculateTotal();
-                      });
-                    })),
+                        List<double> girilen = textValueList.map((e) {
+                          return double.parse(e);
+                        }).toList();
+
+                        //RSS MIKTARI * RSS TIPI * (BASE + BOOST + ARASTIRMA)
+                        for (var i = 0; i < 5; i++) {
+                          resultList[i] = (girilen[i] *
+                                  (1 +
+                                      settingsValue[0] +
+                                      settingsValue[4] +
+                                      settingsValue[5])) *
+                              _rssValueList[i] *
+                              (_boostValue +
+                                  1 +
+                                  settingsValue[1] +
+                                  settingsValue[2] +
+                                  settingsValue[3]);
+                        }
+                        setState(() {
+                          _calculateTotal();
+                        });
+                      })),
+              SizedBox(height: 10),
+
 //RESULT EKRANI
-            Container(
-              padding: EdgeInsets.all(12),
-              height: heightTotal * 0.17,
-              width: MediaQuery.of(context).size.width * 0.7,
-              color: Colors.black.withOpacity(0.3),
-              child: Column(
-                children: [
-                  Column(
-                    children:
-                        List.generate(5, (index) => buildResultScreen(index)),
-                  ),
-                  Text(
-                    'TOPLAM : ${_calculateTotal()}',
-                    style: TextStyle(fontSize: 18),
-                  )
-                ],
+              Container(
+                padding: EdgeInsets.all(8),
+                height: heightTotal * 0.15,
+                width: MediaQuery.of(context).size.width * 0.6,
+                color: Colors.black.withOpacity(0.3),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children:
+                          List.generate(5, (index) => buildResultScreen(index)),
+                    ),
+                    Text(
+                      'TOPLAM : ${_calculateTotal()}',
+                      style: TextStyle(fontSize: 16),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         )),
-        //IKINCI SAYFA
-        Center(child: RaisedButton(child: Text('ss'), onPressed: () {}))
+
+//IKINCI SAYFA
+        Container(
+          padding: EdgeInsets.all(12),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'Hesaplanmak istenen COP puanı TEK çeşit Kaynağa göre hesaplanacaktır.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 12),
+                ),
+              ),
+
+//2.BOOST DropDownMenu
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: DropdownButton(
+                    hint: Text(_boostTitle),
+                    items: buildDropdownMenuItem(0),
+                    onChanged: (value) {
+                      _boostValue = value;
+                      print(_boostValue);
+                      setState(() {
+                        _boostTitle =
+                            listOfConstants[0].keys.firstWhere((element) {
+                          return listOfConstants[0][element] == value;
+                        }, orElse: () => null);
+                      });
+                    },
+                  ),
+                ),
+              ),
+
+//2.RSS DropDownMenu
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Center(
+                  child: DropdownButton(
+                    hint: Text(
+                      _rssTitle2,
+                      style: TextStyle(
+                          color: _rssTitle2 == 'Resource'
+                              ? Colors.red
+                              : Colors.black54),
+                    ),
+                    items: buildDropdownMenuItem(1),
+                    onChanged: (value) {
+                      setState(() {
+                        _rssValue2 = value;
+                        _rssTitle2 =
+                            listOfConstants[1].keys.firstWhere((element) {
+                          return listOfConstants[1][element] == value;
+                        }, orElse: () => null);
+                      });
+                    },
+                  ),
+                ),
+              ),
+
+//2.TextFormField
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: MediaQuery.of(context).size.width * 0.6,
+                  child: Center(
+                    child: TextFormField(
+                      style: TextStyle(fontSize: 14),
+                      controller: _controller2,
+                      onEditingComplete: () {
+                        FocusScope.of(context).unfocus();
+                      },
+                      decoration: InputDecoration(
+                          contentPadding:
+                              EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                          suffixIcon: IconButton(
+                              icon: Icon(
+                                Icons.cancel,
+                                size: 16,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  _controller2.clear();
+                                  _textValue2 = '0';
+                                  _controller2.text = '0';
+                                });
+                              }),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      keyboardType: TextInputType.number,
+                      onChanged: (value) {
+                        setState(() {
+                          _textValue2 = value;
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Toplanması Gereken Kaynak Miktarı'),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('$_totalRss2  $_rssTitle2'),
+              ),
+
+              RaisedButton(
+                color: Colors.blue,
+                child: Text('Hesapla'),
+                onPressed: () {
+                  setState(() {
+                    _totalRss2 = _calculateForRSS();
+                  });
+                },
+              )
+            ],
+          ),
+        )
       ]),
     );
+  }
+
+  String _calculateForRSS() {
+// RSS/(1,2*3*6)
+    List settingsValue = getIt<GetStorage>().read('gatheringStepperValues');
+    double rss = 0;
+
+    double girilenDeger =
+        _controller2.text == '' ? 0 : double.parse(_controller2.text);
+
+    rss = girilenDeger /
+        (1 +
+            settingsValue[1] +
+            settingsValue[2] +
+            settingsValue[3] +
+            _boostValue);
+
+    rss = rss / _rssValue2;
+
+    rss = rss / (1 + settingsValue[0] + settingsValue[4] + settingsValue[5]);
+    rss = (rss == double.infinity) ? 0 : rss;
+    //return rss.toString();
+    return Numeral(rss.truncate()).value();
   }
 
   String _calculateTotal() {
@@ -242,11 +427,11 @@ class _MainGatheringPageState extends State<MainGatheringPage>
       children: [
         Text(
           'Legion ${index + 1} ',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontSize: 10),
         ),
         Text(
           '${Numeral((resultList[index] ?? 0).truncate()).value()}',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontSize: 10),
         ),
       ],
     );
@@ -270,7 +455,13 @@ class _MainGatheringPageState extends State<MainGatheringPage>
           ),
           Text('Legion ${index + 1}'),
           DropdownButton(
-            hint: Text(_rssTitleList[index]),
+            hint: Text(
+              _rssTitleList[index],
+              style: TextStyle(
+                  color: _rssTitleList[index] == 'Resource'
+                      ? Colors.red
+                      : Colors.black54),
+            ),
             items: buildDropdownMenuItem(1),
             onChanged: (value) {
               setState(() {

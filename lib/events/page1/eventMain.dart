@@ -11,11 +11,10 @@ class EventMainPage extends StatelessWidget {
       @required ModelEvents eventModel,
       @required List contentList})
       : _timer = timer,
-        _eventModel = eventModel,        
+        _eventModel = eventModel,
         super(key: key);
   final _timer;
   final _eventModel;
-
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,24 @@ class EventMainPage extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: Colors.grey.shade900,
-        appBar: AppBar(backgroundColor: Colors.grey.shade900,
+        appBar: AppBar(
+          actions: [
+            IconButton(
+              icon: Icon(Icons.info),
+              onPressed: () {
+                var _controller = Get.find<ControllerServerTime>();
+                Get.defaultDialog(
+                    title: 'Info',
+                    content: Obx(() {
+                      return Text(
+                        'Day : ${_controller.model.value.day}\nNext Hour : ${_controller.model.value.nextEventHr}',
+                        style: TextStyle(fontSize: 14),
+                      );
+                    }));
+              },
+            )
+          ],
+          backgroundColor: Colors.grey.shade900,
           title: Text('Events'),
         ),
         body: Column(
@@ -43,5 +59,3 @@ class EventMainPage extends StatelessWidget {
     );
   }
 }
-
-

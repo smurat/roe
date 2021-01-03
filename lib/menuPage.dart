@@ -1,4 +1,6 @@
 import 'package:son_roe/events/utility/services_event.dart';
+import 'package:son_roe/parts/eden/eden.dart';
+import 'package:son_roe/parts/eden/modeleden.dart';
 import 'package:son_roe/parts/gathering/gather_settings_page.dart';
 import 'package:son_roe/parts/gathering/gathering_page.dart';
 import 'package:time_machine/time_machine.dart';
@@ -40,26 +42,6 @@ class MenuPage extends StatelessWidget {
                     )),
                   ),
                   CustomMenuButton(
-                      onPressed: () {
-                        Get.to(T9ManuPage());
-                      },
-                      buttonTitle: 'T9 Calculator'),
-                  CustomMenuButton(
-                      onPressed: () {
-                        Get.to(ZoneConflictMainPage());
-                      },
-                      buttonTitle: 'Zone Conflict'),
-                  CustomMenuButton(
-                      onPressed: () {
-                        // Get.to(GatheringMainPage());
-
-                        getIt<GetStorage>().read('isSettingsDone') ==
-                                null
-                            ? Get.to(SettingsPageOfGathering())
-                            : Get.to(MainGatheringPage());
-                      },
-                      buttonTitle: 'Gather'),
-                  CustomMenuButton(
                       onPressed: () async {
                         try {
                           var repo = getIt<RepositoryClass>();
@@ -73,21 +55,47 @@ class MenuPage extends StatelessWidget {
                             timer: _timer,
                             eventModel: model,
                             contentList: model
-                                .weekday[_zonedDateTime.dayOfWeek.value - 1]
+                                .weekday[
+                                    _sunday(_zonedDateTime.dayOfWeek.value - 1)]
                                 .daycontents[_controller.model.value.hr]
                                 .eventContent,
                           ));
                         } catch (e) {
-                          print('ERROR ::>> $e');
+                          print(e);
                         }
                       },
                       buttonTitle: 'Events'),
+                  CustomMenuButton(
+                      onPressed: () {
+                        Get.to(MainEDEN());
+                      },
+                      buttonTitle: 'EDEN - ROC'),
+                  CustomMenuButton(
+                      onPressed: () {
+                        Get.to(T9ManuPage());
+                      },
+                      buttonTitle: 'T9 Calculator'),
+                  CustomMenuButton(
+                      onPressed: () {
+                        Get.to(ZoneConflictMainPage());
+                      },
+                      buttonTitle: 'Zone Conflict'),
+                  CustomMenuButton(
+                      onPressed: () {
+                        getIt<GetStorage>().read('isSettingsDone') == null
+                            ? Get.to(SettingsPageOfGathering())
+                            : Get.to(MainGatheringPage());
+                      },
+                      buttonTitle: 'Gather'),
                 ],
               ),
             ),
           )),
     );
   }
+
+  int _sunday(int day) =>
+      (day == 6) ? _controller.sundayEventPicked.value : day;
 
   _initEventPage() async {
     _currentTime = _zonedDateTime.clockTime; // Assigning hh:mm:ss

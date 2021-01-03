@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:son_roe/events/utility/services_event.dart';
+
+import 'package:son_roe/parts/eden/modeleden.dart';
 import 'package:time_machine/time_machine.dart';
 
 class RepositoryClass {
@@ -24,8 +26,10 @@ class RepositoryClass {
     String jsonData = await rootBundle.loadString('assets/events.json');
 
     final res = json.decode(jsonData);
-   ModelEvents eventModel = ModelEvents.fromMap(res);
+    ModelEvents eventModel = ModelEvents.fromMap(res);
     print('ControllerServerTime: Json oluşturuldu');
     return eventModel;
   }
+
+
 }

@@ -12,8 +12,8 @@ class ControllerServerTime extends GetxController {
 
   //Default sunday event is Killing event
   //Sunday event:
-  var sundayEventPicked = 5.obs; 
-  
+  var sundayEventPicked = 5.obs;
+
   int realDay;
 
   updateTime({LocalTime localTime, LocalTime reverseTime, int day}) {
@@ -27,7 +27,6 @@ class ControllerServerTime extends GetxController {
       val.reverse = reverseTime;
       realDay = day;
       val.day = _sunday(day); // Gün 6 geldi Model Güncellendi.
-
       modelEventContent.update((value) {
         value.eventList = eventModelJsonData
             .weekday[val.day].daycontents[val.hr].eventContent;

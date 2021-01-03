@@ -20,7 +20,7 @@ class ItemContainer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Container(
-        height: MediaQuery.of(context).size.width * 0.5 - 36,
+        height: MediaQuery.of(context).size.width * 0.55 - 36,
         width: MediaQuery.of(context).size.width * 0.5 - 36,
         child: Column(
           children: [
@@ -28,7 +28,7 @@ class ItemContainer extends StatelessWidget {
               elevation: 15,
               child: Container(
                 width: (MediaQuery.of(context).size.width * 0.5 - 36),
-                height: (MediaQuery.of(context).size.width * 0.5 - 36) * 0.65,
+                height: (MediaQuery.of(context).size.width * 0.55 - 36) * 0.65,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
