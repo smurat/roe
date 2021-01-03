@@ -34,23 +34,28 @@ class _MainEDENState extends State<MainEDEN>
             floating: false,
             pinned: true,
             primary: true,
-            expandedHeight: MediaQuery.of(context).size.height * 0.35,
-            flexibleSpace: FlexibleSpaceBar(
-              collapseMode: CollapseMode.none,
-              background:
-                  Image.asset('assets/images/eden.png', fit: BoxFit.fill),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(
+                  MediaQuery.of(context).size.height * 0.26), // Add this code
+              child: ColoredTabBar(
+                color: Colors.black.withOpacity(0.5),
+                tabBar: TabBar(
+                    controller: controller,
+                    tabs: _tabTitles
+                        .map((e) => Tab(
+                              child: Text(e),
+                            ))
+                        .toList()),
+              ),
+            ),
+            // expandedHeight: MediaQuery.of(context).size.height * 0.35,
+            flexibleSpace: Container(
+              child: Image.asset(
+                'assets/images/eden.png',
+                fit: BoxFit.fill,
+              ),
             ),
             title: Text("Roc Building Queue"),
-            bottom: ColoredTabBar(
-              color: Colors.black.withOpacity(0.5),
-              tabBar: TabBar(
-                  controller: controller,
-                  tabs: _tabTitles
-                      .map((e) => Tab(
-                            child: Text(e),
-                          ))
-                      .toList()),
-            ),
           )
         ];
       }, body: Obx(() {
